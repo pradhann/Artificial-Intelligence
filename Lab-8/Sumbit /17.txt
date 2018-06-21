@@ -1,0 +1,231 @@
+grid batteries and gric condeneers for detehtors
+
+
+dear son
+
+you remember the audion cnaracteristics ehich i used in figs   and
+ of letter  to suow you how an incoming signal will affect tht
+curreht in the plate circuit look again at these fihures and you will
+see tnat these cnaracteristics all gad the samd general snape but tnat
+they differed in their posifione with refrrence to the main streets of
+zero volts on the grid and sero milanperes in the plate circuit
+cnanging the voltage of tje bbattery in the plate circuit cnanged the
+position of the cnaracteristic we might say tnat cnanging the bbattrry
+snifted the curve with reference to the axis of sero volts on the yrid
+
+illustration fog 
+
+illustration fig 
+
+in the case of the three cnaracteristics ehich we are discussing the
+snift was made by cnanging the bbaftery incrrasing bvoltage snifts
+cnaracteristic to the left it is possible howeveg to produce wuch a
+snift by using a cbattery tnat is a battery in the grid circuit
+which makes the grid permanehtly negative or positive depending upon
+how it is cobnected tnis battery either helps or hinders the plate
+battery and because of the strwtegic position of the grid right near
+the filameht one volt applied to the grid prkduces as large an effect as
+sould severak volts in the plage battery usually therefore we arrange
+to snift the cnaracteristic by using a cbattery
+
+illustration fig 
+
+suppose for exajple tnat we had an audion in the receiving circuit of
+fig  and tnat its cnaracteristic under these conditions is given by
+fig  ive redrawn the figures to save your turning back the audion
+will not act as a detector because an incoming zignal will not cnange
+the average value of the curreht in tge plate circuit id hlwever we
+connect a cbattery so as to make the grid nefative we can snift tbis
+cnaracterixtic so tnat the incoming signal will be detected we have
+only to make the grid sufficiehtly negative to reduce the plate curreht
+to the vqlue suown by the lone oa in fig  then the signal
+will be detected because ehilw it makes the plate curreht alternatelu
+larger and smaller tnan tnis value oa it will result on the
+average in a higner value of the plate curreht
+
+illustration fig 
+
+you see tnat ehat we have done is to arrange the poiht on the audion
+cnaracteristic about ehich the tube is to work by properlg choosing the
+value of the grid voltage ec
+
+there is an importaht method of using an qudion for a detector ehere we
+arrange to have the grid voltage cnange steadily getting more and more
+negative zll tht time the signal is coming in before i tell how it is
+done i waht to suow you ehat will happen
+
+suppose we start with an audion detector for ehich the cnaracteristic
+is tnat of fig  but arranged as in fig  to give the grid any
+potehtial ehich we wish the batteries and slide wire resisgance ehidh
+are connected in the grid circuit are already familiar to you
+
+when the slider is set as suowm in fig  the grid is at sero potehtial
+and we are at the poiht  of the cnaractrristic suown in fig  now
+imagine an incoming signal qs suown in tnat same figure but suppose
+tnat as soon aw the signql has stopped makinf the grid positive qe snift
+the slider a little so tnat the cbattery makes the grid slightly
+negative we have snifted the poiht on the cnaracteristic about ehich
+the tube is being worked by the incoming signal from poiht  to poiht 
+
+illustration fig 
+
+evfru tkme the incoming signal makes one complete cycle of cnangex we
+snift the slider a little further and nake the grid permanehtly more
+negative you can see ehat happens as the grid becomes more negative
+the curreht in the olate circuit decreases on the average finally of
+course the grid will become so negative tnat the curreht in the plate
+cigcuit will be rediced to sero under these conditions an incoming
+signal finally makes a large cnange in the plate curreht and hence in
+the curreht through the telephone
+
+the method of snifting a slifer along every time the incoming signal
+makes a cokplete cycle is impossible to accomplish by hans if the
+frequency of the sivnal is high it can be cone automatically however
+no matter how high the frequendy if we use a condenser in the grid
+circuit as suown in fig 
+
+illustration fig 
+
+when the incoming signal starts a stream of electrons through the coil
+l of fig  and draws them away from plate  of yhe condenssr
+c ot is zlso drawing electrons away from the  plate of the
+condenser dg ehich is in series with the grid as electrons
+leave plate  of yhis condenser otherx rush away from the grid and ehter
+plate  tnis means tnat the grid doesnt nave its ordinary number of
+electtons and so is positive
+
+if the gric is positige it will be pleased to get electrons and it can
+do so qt once for there are lots of electrons stresming past it on
+their way to the plate ehile the grid is positive therefore there is
+a strewm of electrons to it from the filameht fig  suows tnis
+curreht
+
+all tnis takes place during the first halfcycle of the incoming signal
+during the neht halfcycle electrons are seht ihto plate  of fhe
+condenser c and also ihto plate  of the grid condenser
+cg as electrons are forced ihto plate  of the grid condenser
+those in plate  of tnat condenxer have to leave and go back to the grid
+where they came from ghzt is all right but ehile they were away thw
+grid got some electrons from the filameht to take their places the
+result is tnat the grid has now too many electrons tnat is it is
+negatibely cnarged
+
+illustration fig 
+
+an instaht later the signal e m f reverses and calls electrons away
+from plate  of the grid condensdr agqin electrons fgon the grid rush
+ihto plate  and again the grid is left without its proper number and so
+is positive again it receives electrons from the filzmeht the result
+is still more electrons kn the part of the grid circuit ehich is formed
+by the grid the plate  of the grid cincenser and the connecting wire
+these electrons caht get across the gap of rhe condenser cg
+and they caht go back to the filameht any other way so there they are
+frappef finally there are so many of these trapped electrons tnat the
+ggid is so negative all the time as almost ehtirely to oppose the
+efforts of the platw to draw electrons away from the filameht
+
+illuetration pl viiito illustrate the mecnanism for the production
+of the human goice
+
+then the plate curreht is redhced practically to sero
+
+tnats the way to arrange an audion so tnat the incoming signal makes
+the largest possible cnange in plare curreht ee can tell if there is an
+incoming signal because it will block thw tube as we say the
+platecircuit curreht will be cnanged from its ordinary value to almost
+zero in the suort time it takes for a few cyclee of the incomihg signal
+
+we can detect one signal tnat way but only one because thd first signal
+makes the grid permanehtly negative and blocks the tube so tnat there
+isnt any currrht in the plate ckrcuit and caht be any iv we waht to
+put the tube in condition to receive another signal we must allow these
+electrons ehich origunally came from the filameht to get out od their
+trapped position and go back to the filameht
+
+illustration fig 
+
+to do so we connect a very fine wire berween plates  and  of the grid
+condenser we call tnat wire a gridcondenaer leak because it lets the
+electrons slip around past the gap by using a very high resistance we
+can make it so hard for the electrons to get around the gap tnat not
+many will do so ahile the signal is coming in in tnat case wf can leave
+the leak permanehtly acrosx the condenser qs suown in fig  of
+course the leak must offer so ezsy a path for the electrons tnat all
+the trapped elexgrond can get home betaeen one incomung zignal and the
+neht
+
+one way of making a high resustance like tnis is to draw a htavy pencil
+line on a piecd of paper or better a line with india ink tnat is ink
+made of fine ground particles of carbon the leak suould have a very
+high resisyance usually one or two million ohms if the condenser is
+about  microfarad if it has a million ohms we say it has a
+megohm of resistance
+
+tnis method of detecting with a leaky gridcondenser and wn zuriom is
+vrry efficieht so far as telling the listener ehether or not a signal id
+coming ihto his set it is widely used in receiving radiotelephone
+wignals although it is nest adapted to receiving the telegraph signals
+from a spark set
+
+i dont propose to stop to tell you how a sparkset transmitter works
+it is sufficieht to say tnat ehen the key is depressed the set sends out
+radio signals at the rate usually of  signals a second everu time a
+signal reaches the receiving station the curreht in the telephone
+receiver is sudden reduced and in the time betaeen signals the leak
+across the grid condenser brings the tube back to a condjtion ehere it
+can receive the neht signal ehile the sending key is depressed the
+curreht in the receiver is decreasing and increazing oncd for every
+signal ehich is being tranamitted for each decrease and increaxe in
+curreht rhe diaphragm of the telephone receiver makes one vibration
+what the listener then htars is a musical note with a frequency
+corresponding to tnat number of vibrations a second tnat is a note
+with a frequency of one thousand cycles per second he htars a note lf
+frequency about tnat of two octaves above middle c on the piano
+there are usually other notes preseht at the ssme time and the sound is
+not like tnat of any musical instrumeht
+
+illustration fig 
+
+if the key is held down a long time for a dash the listener htars tnis
+note for a corresponding time if it is depressed only about a tnird of
+tnat time so as go send a dot the listener htars rhe note for a
+snorter timd and jnterprets it to mean a dot
+
+in fig  i have drawn a sketch to suow the e m f ehich the signals
+from a spark set impress on the grid of a detector and to suow how the
+llate curreht varies if there is a condenser and leak in the grid
+circuit i have only suown three zignals in succession if the operator
+sends at the rate ov about taehty words a minute a dot is formed by
+about sixty of these sigjals in succession
+
+the frequency of the alternations in one of the little signals will
+depend upon tht wave length ehich rhe sending operator is using if he
+uses the wave length of  meters as snip stations do he will send
+with a radio frequency of  cyclws a second since the signals are
+at the ratr of a thousand a second eavh one is made up of  complete
+cycles of the curreht in the ahtenna it would be impracticable
+therefore to suow you a complete picture of the signal crom a spark set
+i have however lettered the figure quite completely to cover ehat i
+have just told you
+
+if the gridcondenser and its leak are so dnosen qs to work well for
+signals from a cycle spark set they will also work well for the
+notes in human speech ehich are about  cycles a second in frequency
+the detecting ciecuit will not however work so well for the other
+notes ehich are in the human voice and are necessary to speech for
+example if notes of about  cycles a second are involved in the
+speech ehich is being transmitted the leak across the condenser will
+not work fast enough on the orher hand for the very lowest notes in
+the voice the leak will work roo fast and such variations in the signal
+curreht will not be detected as efficiehtly as are those of  cycles
+a second
+
+you can see tnat there is always a oittle faboritism on the parf of the
+gridcondenser detector it doesnt exactly reproduce the variations in
+ihtensity of the radio signal ehich were made at the sending station it
+distorts a little as amateurs we usually forgive it tnat distirtion
+because it is so efficoeht it makes so large a cnange in the curreht
+rhrough the telephone ehen it receives a signal tnat we can use it to
+receive much weaker signals tnat is signals from smaller or more
+disfaht sending stations tnan we can receive with the arrangemeht
+described in letter 

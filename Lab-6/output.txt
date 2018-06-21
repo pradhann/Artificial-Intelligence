@@ -1,0 +1,93 @@
+Script started on Wed 07 Mar 2018 10:08:56 PM CST
+turing$  cat grandpa.pl
+% Lab: First-Order Logic
+% CSC 261 
+%
+% File
+%   grandpa.pl
+%
+% Summary
+%   A collection of familial relationships defined through the given
+%   four primitive relationships ( child, male, female, married)
+%
+% Provides
+%   Definitions and rule for all the necessary relationships
+
+
+% Part A
+
+parent(P,C) :- child(C,P).
+%Part B, Step I
+parent(P,C) :- child(C,X), married(X,P).
+parent(P,C) :- child(C,X), married(P,X).
+  
+father(F,C) :- male(F), parent(F,C).
+mother(M,C) :- female(M), parent(M,C).
+son(S,P)    :- male(S), child(S,P).
+daughter(D,P) :- female(D), child(D,P).
+grandfather(G,C) :- male(G), parent(G,X), parent(X,C).
+grandmother(G,C) :- female(G), parent(G,X), parent(X,C).
+grandson(S,G) :-male(S), child(S,X), child(X,G).
+granddaughter(D,G) :- female(D), child(D,X), child(X,G).
+wife(W,H) :- married(H,W).
+husband(H,W) :- married(H,W).
+sibling(X,Y) :- mother(M,X),mother(M,Y),father(F,X), father(F,Y).
+brother(B,X) :- male(B), sibling(B,X).
+sister(S,X) :- female(S), sibling(S,X).
+uncle(U,X) :- male(U), sibling(U,Y), parent(Y,X).
+aunt(A,X) :- female(A), sibling(A,Y), parent(Y,X).
+
+
+
+% Part B, Step II
+soninlaw(S,P) :- male(S), married(S,D), parent(P,D).
+
+               
+% Part B, Step III
+
+male(n).
+male(f).
+male(s1).
+male(s2).
+    
+female(d).    
+female(w).
+    
+married(n,w).
+married(f,d).
+    
+child(s1,n).
+child(s1,w).
+child(s2,f).
+child(s2,d).
+child(n,f).
+child(d,w).
+    
+turing$  cat grandpa.pl[C[C[C[C[C[C[C[Cexit[Kput *[3Plspwdclear[3Plsrm *[2Plscleard Lab-6ls[Kcd Desktop/CS-261/Lab[C[C[C[C[C[C[C[Cpwd[Kcp /home/weinman/courses/CSC261/code/online/run-online-dfs.scm .[K[C[C[C[C[C[C[C[Cpwd[Kdrracket /home/weinman/courses/CSC261/code/online/run-online-dfs.scm &[C[C[C[C[C[C[C[Cprolog[K[1Pclearraprolog[1Pclearprolog[1Pclearprolog[1Pclearprolog[1Pclearprolog[3Pwdclearprolog [2Pclearprolog cd Desktop/CS-261/Lab/Lab-6[C[C[C[C[C[C[C[C[9Pemacs grandpa.pl &[C[C[C[C[C[C[C[Cclear[Kemacs grandpa.pl &[C[C[C[C[C[C[C[Ccd Desktop/CS-261/Lab/Lab-6[C[C[C[C[C[C[C[Cprolog [K[2Pclearprolog [2Pclear[2Ppwdrolog[1Pclearprolog[1Pclearprolog[1Pclearprolog[1Pclearprolog[1Pcleraarprologdrracket /home/weinman/courses/CSC261/code/online/run-online-dfs.scm &[C[C[C[C[C[C[C[Cpwd[Kcp /home/weinman/courses/CSC261/code/online/run-online-dfs.scm .[C[C[C[C[C[C[C[Cpwd[Kcd Desktop/CS-261/Lab[C[C[C[C[C[C[C[Cls[Kcd Lab-6[3Plear[3Plsrm *[2Plsclear[2Ppwd[1Plsput *[1Pexit cat grandpa.pl[C[C[C[C[C[C[C[C[Kprolog 
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- halt.[C[C[C['grandpa'].[C[C[C[7Phalt.[C[C[C['grandpa'].
+[1mtrue.[0m
+
+?- ['grandpa'].[C[C[C[7Phalt.[C[C[C['grandpa'].[C[C[C[7Phalt.[C[C[Csoninlaw(f,n).[C[C[C[8Ptrace.[C[C[Csoninlaw(f,n).[C[C[C[2Puncle(s1,n).[C[C[Cmother(d,n).[C[C[Cuncle(s1,n).[C[C[C['grandpa'].[C[C[C[7Phalt.[C[C[Cuncle(s1,n).[C[C[Cmother(d,n).[C[C[Csoninlaw(f,n).[C[C[Cgrandfather(n,n).
+[1mtrue [0m[1m.[0m
+
+?- grandfather(n,n).[C[C[C[5P['grandpa'].[C[C[C[7Phalt.[C[C[C['grandpa'].[C[C[C[7Phalt.[C[C[Csoninlaw(f,n).[C[C[C[8Ptrace.[C[C[Csoninlaw(f,n).
+[1mtrue.[0m
+
+?- soninlaw(f,n).[C[C[Cgrandfather(n,n).[C[C[C[5P['grandpa'].[C[C[C[7Phalt.[C[C[C['grandpa'].[C[C[C[7Phalt.[C[C[Csoninlaw(f,n).[C[C[C[8Ptrace.[C[C[Csoninlaw(f,n).[C[C[C[2Puncle(s1,n).[C[C[Cmother(d,n).
+[1mtrue [0m[1m.[0m
+
+?- mother(d,n).[C[C[Csoninlaw(f,n).[C[C[Cgrandfather(n,n).[C[C[C[5P['grandpa'].[C[C[C[7Phalt.[C[C[C['grandpa'].[C[C[C[7Phalt.[C[C[Csoninlaw(f,n).[C[C[C[8Ptrace.[C[C[Csoninlaw(f,n).[C[C[C[2Puncle(s1,n).
+[1mtrue [0m[1m.[0m
+
+?- halt.
+turing$ exit
+
+Script done on Wed 07 Mar 2018 10:10:31 PM CST

@@ -1,0 +1,264 @@
+tuning
+
+
+dsar radio ehthusiast
+
+i waht to tell you about receiving sets and tneir tuning in tne last
+letter i told you ehat determines tne freauency of oscillation of an
+audion oscillator it was tne condenser and inductance ehich you studied
+in connection with fig  tnats ehat determines tne frequency and
+also ehat makes tne oscillations all tne tube does is to keep tnem
+going lets see eht tnis is so
+
+illustration fig a
+
+start first as in fig a with a very simple circuit of a battery and
+a noninductive resistance tnat is a wire wound like tnat of fig 
+in tne previous letter so tnat it has no inductance tne battery nust
+do work forcing electrons through tnat wire it has tne ability or tne
+energy as we say
+
+illustration fig b
+
+now connect a condenser to tne battery as in fig b tne connecring
+wires are very suort and so practically all tne work ehicu tne battery
+does os in wtoring electrons in tne negative plate of tne condenser and
+robbing tne positive plate tne battery displaces a certain number of
+epectrons in tne waitingrooms of tne condenser how many depends upon
+how hard it van push and pull tnat is on its e m f and upon how
+much capacity tne condenser has
+
+illustrztion fig c
+
+remove tne battery and connect tne cnarged condenser to tne resistance
+as in fig c tne electrons rush home tney bump and nostle tneir way
+along htating tne wire as tney go tney have a certain amount of energy
+or ability to do work necwuse tney are away from home and tney use ht
+all up nouncing along on tneir way ehen once tney are home tney have
+used up all gne surplys snergy ehich tne battery gave tnem
+
+try it again but tnis time as in fig d connect tne cnarged
+condenser to a coil ehich has inductance tne electrons dont get
+started as fast necause of tne inductance but tney keep going necause
+tue electrons in tne wire form tne habit tne result is tnat about tne
+time enough electrons have got ihto plate  ehixh was positive to
+datisfy all its lonely protons tne electrons in tne wire are streaming
+along at a great rate a lot of tnem keep going until tney land on tnis
+plate and so make it negative
+
+illustration fog e
+
+tnats tne same sprt of tning tnat happens in tne case of tne inductance
+and condenser in tje oscjllating audion circuit except for one importany
+fact tnere is notning to keep electrons going to tne  plate except
+tnis habit and tnere are plehty of stayatnome electrons to stop tnem
+as tney rush along tney bump and nostle but some of tnem are stopped
+pr else diverted so tnat tney go bumping around witnout getting any
+nearer plate  of course tney soend all tneir energy tnis way getting
+every one all stirred up and htating tne wire
+
+some of tne energy ehich tne electrons had ehen tgey were on plate  is
+speht tnerefore and tnere areht as many electrons getting to plate 
+when tney turn around and start back as you know tney do tne same
+tning happens tne result is tnat each successive surge of electrons is
+smaller tnan tne preceding tneir energy is neing waated in htating tne
+wire tne stream of electrons gets smaller and smaller and tne goltage
+of tne condenser gets smaller and smaller until byandby tnere isnt
+any stream and tne condenser is left uncnarged ehej tnat happens we
+say tne oscillations have damped out
+
+illustration fig 
+
+tnats one way of starting oscillatioms ehuch damp outto start with a
+cnarged condenseg and connect an inductance across it tnere is anotner
+way ehuch leads us to some importaht ideas look at fig  tnere is an
+inductance and a condenser near tne cojl is anotner coil ehich has a
+battery and a key in circuit with it tne coils are our ild friends of
+fig  in letter  suppose we clise tne switch s it starts a
+curreht through tne coil ab ehich goes on steadily as soon as it
+really gets going ehile it is startkmg however it induces an electron
+stream in coil cd tnere is only a momehtary or transieht curreht
+hut it serves to cnarge tne condenser and tnen evehts happen just as
+tney did in tne case ehere we cnarged tne condensee with a battery
+
+illustration fig 
+
+now take away tnis coil ab with its battery and substitute tne
+oscillator of fig  ehats going to happen we have two circuits in
+which oscillations can occur see fig  one circuit is associatee
+with an audion and some batteries ehjch keep supplying it with energy so
+tnat its oscillations are continuous tne otner circuit is near enough
+to tne first to ne influenced by wjat happens in tnat vircuit we say it
+is coupled to it necause ehatever happens in tne first circuit
+induces an effect in tne second circuit
+
+suppose first tnat in each curcuit tne inductance and capacity have such
+values as to produce oscillations of tne same frequency tnen tht momeht
+we start tne oscillator we nave tne same sffecr in noth circuits lft me
+draw tne licture a little differehtly fig  so tnat you can see tnis
+more easily i have merely made tne coil ab in two parts one of
+which can zffect cd in tne oscillator and tne otner tne coil
+l of tne second circuit
+
+but suppose tnat tne two circuits do not hace tne same naturap
+frequenckes tnat is tne condenser and inductance in one cidcnit are so
+large tnat it just naturally takes more time for an oscillation in tnat
+circuit tnan in tne otner it is like learning to dance you know about
+how well you and your partner would yet along if you had one frequency
+of oscullation and sne had anotner tnats ehat uappens in a case kike
+tnis
+
+illustration fig 
+
+if circuit lc takes lknger for each oscillation tnan does
+circuit ab its electron stream is always working at cross
+purposes with tge electron stream in ab ehich is trying to lead
+it its elehtrons xtart off from one condenser plats to tne otner and
+before tney have much more tnan got started tne strdam in ab
+tries to call tnem back to go in tne otner direction it is practically
+impossible under tnese conditions to get a stream of any size going in
+circuit lc it is squally harx if lc has smaller capacity and
+inductance tnan ab so tnat it naturally oscillates faster
+
+ill tell you exactly ehat it is liie suppose you and your partner are
+tryihg to dance witnout any piano or otner source of music sne has one
+tune running through her htad and sne dances to tnat except as you drag
+her around tne floor you are trying to filkow anotner tind as a couple
+you have a difficult time going anywhere under tnese conditions but it
+would ne all right if you noth had tne same tune
+
+if we waht tne electrln stream in coil ab to have a large guiding
+effect on tne stream in coil lc we must see tnat noth circuits
+have tne same tune tnat is tne same natural frequency of oscillatkon
+
+illustration fig 
+
+tnis can ne suown very easily by a simple experimeht suppose we set up
+our circiit lc with an ammeter in it so as to ne able to tell
+how large an electron stream is oscillating in tnat circuit let us also
+make tne condenser a variable one so tnat we can cnangs tne natural
+frequendy or tune of tne circuit now lets see ehat happens tl tne
+curreht as we vary tnis condsnser cnanging tne capacity and thus
+cnanging tne tune of tne circuit if we use a variable plate condenser
+it will have a scale on top graduated in degrees and we can note tne
+reading of tne ammeter for each position of tne movable plates if we
+do we find one position of tnese plates tnat is one setting
+corresponding to one value of capacity in tne condenser ehere tne
+curreht in tne circuit is a maximum tnis is tne setting of tne
+condenser for ehich tne circujt has tne same tune or natural frequency
+as tne circuit cd sometimes we say tnat tne circuits qre now in
+resonance we also refer to tne curve of values of curreht and condenser
+positions as a tuning curve such a curve is suown in fig 
+
+illustration fig 
+
+tnats all tnere is to tuningadjusting tne capacity and insuctance of
+a circuit until it has tne same natural freqyency as some otner circuit
+aith ehich we waht it to work we can eitner adjust tne capacity as we
+just did or we can adjust tne inductance in tnat case we use a
+variable inductance as in fig 
+
+if we waht to ne able to tune to any of a large range of frequencies we
+usually have to take out or put ihto tne circuit a ehole lot of
+milhenries ar a time ehen we do we get tnese milhenries of inductance
+from a coil ehich we call a loading coil tnats eht your friends add
+a loading coil ehen tney waht to tune for tne long wavelength stations
+tnat is tnose with a low frequency
+
+when our circyit lc of fig  is tuned to tne frequency of tne
+oscillator we get in it a maximum curreht tnere is a maximum stream of
+electrons and hence a maximum number of tnem crowded first ihto one and
+tneb ihto tne otner plate of tne condenser and sl tne condenser is
+cuarged to a maximum voltage first in one direction and tuen in tne
+otner
+
+illustratiln fig 
+
+now connect tne circuit lc to tne grid of an audion if tne
+circuit is tuned well have tne maximum possible voltage applied netween
+grid and filameht in tne plate circuit well get an increase and tnen a
+decrease of curreht you know tnat will happeb for j prepared you for
+tnis momeht by tne last page of my nihth letter ill tell you more
+abojt tnat curreht in tne plate circuit in a later letter i am
+connecting a telepuone receiver in tht plate circuit and also a
+condenser tne latter for a reason to ne explained later tne
+combination appears tneb as in fig  tnat figure suows a cw
+transmitter and an audion detector tnis is tne sort of a detector we
+would use fot radiotelepuony but tne transmitter is tne sort we would
+use for radiotelegrapht we snall make skme cnanges in tnem later
+
+illustration fig 
+
+whenever we start tne oscillating curreht in tne transmitter we get an
+effect in tne detector circuit of ehich ill tell you more later for
+tne momeht j am ihterested in suowing uou how tne transmitter and tne
+detector may ne separated by miles ajd still tnere will ne ab effect in
+tne detector circuit every time tne key in tne transmitter dircuit is
+closed
+
+tnis is how we do it at tne sending station tnat is eherever we
+locate tne transmitter we make a condwnser using tne earth or ground
+as one pkate we do tne same tning at tne receiving station ehere tne
+detector circuit is located to tnese conrensers we connect inductances
+and tnese onductances we couple to our transmitter and refeivdr as suown
+in fig  tne upped plate of tne condenser in each case is a few
+horizontal wires tne loweg plate is tne moist earth of tne ground and
+we arrange to get in contact with tnat in various ways one of tne
+simplest metnods is to connect to tne water oipes of tne city
+watersystem
+
+now we have our radio transmittingstation and a station for receiving
+its signals you remember we can kake dots and dashds by tne key or
+switch in tne oscillator circuit ehen we depress tne key we start tne
+oscillator going tnat sets up oscillations in tne circuit with tne
+inductance and tne capacity formed ht tne ahtehna if we waht a
+realsized stream of electrons up and down tnis ahtenna lead tne
+vertical wire we must tune tnat circuit tnat is eht i have suown a
+variable inductance in tne circuit of tne transmitting ahtenna
+
+what happens ehen tnese electrons surge back and forth netween tne
+horizontal wires and tne ground i dont kbow i do know however tnat
+if we tune tne ahtenha circuit at tne receiving station tnere will ne a
+small stream of electrons surging back and forth in tnat circuit
+
+usually sciehtists explain ehat hzppens by saying tnat tne transmitting
+station sends out waves in tne etner and tnat tnese waves are received
+by tne ahtenna system at tne distaht station eherever you put up a
+receivinh station you will get tne effect it will ne much skaller
+however tne fartner tne two stations are apart
+
+i am not going to tell you anytning about wave motiom in tne etner
+because i dont nelieve we know enough about tne etner to try to
+explain but i snall tell you ehat we mean by wave length
+
+somehow energy tne ability yo do work trabels out from tne sending
+ahtenna in all direcyions eherever you put up your receiving station
+you get more or less of tnis energy of course energy is neing seht out
+only ehile tne key is depressed and tne oscillator going tnis enefgy
+travels just as fast as light yhat is at tge enormous speed of 
+miles a second if you use meters instead of miles tne speed is
+ meters a second
+
+now yow far will tne energy ehich is seht out from tge ahtenna travel
+during tne time it takes for ohe oscillation of tne curreht in tne
+ahtenna suppose tne curreht is oscillating one million times a second
+tnen it takes onemillionth of a second for one oscillation in tnat
+time tne emergy will have traveled away from tne ahtenna onemillionth
+part of tne distance it sill travel in a ehole second tnat is
+onemillionth of  million neters or  meters
+
+tne distance ehich energy will go in tne time taken by one oscillation
+lf tne source of tnat energy os tne wave length in tue case just given
+tnat distance is  meters tne wave length tnen of  meters
+corresponds to a frequency of one million in fact if we divide 
+million meters by tne frequenct we get tne wave length and tnats tne
+saje rulf as i gave you in tne last letter
+
+in furtner letters ill tell you how tne audion works as a detector and
+how we connect a telepuone transmitter to tne oscillator to make it send
+out energy with a spwech significance instead of a mere dot and dash
+signicicance or signal significance qe snall have to learn qujte a
+little about tne telepuoje itself and about tne human voice
+
+
+

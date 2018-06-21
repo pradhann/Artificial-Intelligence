@@ -1,0 +1,24 @@
+References:
+
+  Code for running the experiments obtained from working on Part 1 of this Lab
+  Worked with Marian for Part 1 of this lab. The lab is cited below:
+  http://www.cs.grinnell.edu/~weinman/courses/CSC261/2018S/assignments/search.pdf
+  
+  Code for the search algorithms obtained from:
+  https://www.cs.grinnell.edu/~weinman/courses/CSC261/2018S/labs/uninformed-search.html
+
+  The description of the 8-problem was paraphrased from: https://www.cs.princeton.edu/courses/    archive/spr10/cos226/assignments/8puzzle.html
+
+ The description of the ‘jumping problem’ was provided in the Lab Assignment. The complete                      description of the ‘jumping problem’ is available here: https://www.cs.grinnell.edu/~weinman/ courses/CSC261/2018S/assignments/search.pdf
+  
+
+  
+  
+
+
+
+Academic honesty certification:
+  Our initials below confirm that the above list of sources
+  is complete AND that I/we have not talked to anyone else
+  (e.g., CSC 261 students) about the solution to this problem
+  Initials:  NP

@@ -1,0 +1,379 @@
+;; Lab: Probability
+;; CSC 261 
+;;
+;; File
+;;   analysis.scm
+;;
+;; Summary
+;;   A collection of procedures and constants used to find the evidence
+;;   of which typist typed a file.
+;;
+;; Provides
+;;   (path-original letter-num)
+;;   (path-unknown letter-num)
+;;   (path-typist-1 letter-num)
+;;   (path-typist-2 letter-num)
+;;   (train! counts path-fun letter-path)
+;;   (evidence-calculator-individual letter-1 letter-2 path-test typed-by)
+;;   (evidence-calculator-pair letters-1 letters-2 path-test typed-by)
+;;   (evidence-calculator-all letters-1 letters-2 path-test)
+;;   first-tests
+;;   second-tests
+;;   third-tests
+(load "charmodel.scm")
+
+;;; Procedure:
+;;;   path-original
+;;; Parameters:
+;;;   letter-num, a string
+;;; Purpose:
+;;;   Returns the path to the original letter
+;;; Produces:
+;;;   letter-path, a string
+;;; Preconditions:
+;;;   There is a letter at mills/original corresponding to letter-num
+;;; Postconditions:
+;;;   letter-path is a path to a valid file
+(define path-original
+  (lambda (letter-num)
+    (string-append
+     (string-append "mills/original/" letter-num)
+     ".txt")))
+
+;;; Procedure:
+;;;   path-unknown
+;;; Parameters:
+;;;   letter-num, a string
+;;; Purpose:
+;;;   Returns the path to the unknown letter
+;;; Produces:
+;;;   letter-path, a string
+;;; Preconditions:
+;;;   There is a letter at mills/corrupted/unknown corresponding to letter-num
+;;; Postconditions:
+;;;   letter-path is a path to a valid file
+(define path-unknown
+  (lambda (letter-num)
+    (string-append
+     (string-append "mills/corrupted/unknown/" letter-num)
+     ".txt")))
+
+;;; Procedure:
+;;;   path-typist-1
+;;; Parameters:
+;;;   letter-num, a string
+;;; Purpose:
+;;;   Returns the path to the letter written by typist-1
+;;; Produces:
+;;;   letter-path, a string
+;;; Preconditions:
+;;;   There is a letter at mills/corrupted/typist1 corresponding to letter-num
+;;; Postconditions:
+;;;   letter-path is a path to a valid file
+(define path-typist-1
+  (lambda (letter-num)
+    (string-append
+     (string-append "mills/corrupted/typist1/" letter-num)
+     ".txt")))
+
+;;; Procedure:
+;;;   path-typist-2
+;;; Parameters:
+;;;   letter-num, a string
+;;; Purpose:
+;;;   Returns the path to the letter written by typist-2
+;;; Produces:
+;;;   letter-path, a string
+;;; Preconditions:
+;;;   There is a letter at mills/corrupted/typist2 corresponding to letter-num
+;;; Postconditions:
+;;;   letter-path is a path to a valid file
+(define path-typist-2
+  (lambda (letter-num)
+    (string-append
+     (string-append "mills/corrupted/typist2/" letter-num)
+     ".txt")))
+
+;;; Procedure:
+;;;   train!
+;;; Parameters:
+;;;   counts, a list of vectors
+;;;   path-fun, a function used to compute the path to a letter
+;;;   letter-path, a string representing a letter number
+;;; Purpose:
+;;;   To train counts on the letter corresponding to letter-path
+;;; Produces:
+;;;   Nothing, it is called for its side-effects
+;;; Preconditions:
+;;;   letter-path is a valid letter
+;;;   path-fun returns the path for the correct typist
+;;; Postconditions:
+;;;   counts is trained on the letters given and normalized
+(define train!
+  (lambda (counts path-fun letter-path)
+    (count-conditionals! (path-original letter-path)
+                         (path-fun letter-path)
+                         counts)
+    (normalize-counts! counts)))
+
+;;; Procedure:
+;;;   evidence-calculator-individual
+;;; Parameters:
+;;;   letter-1, a string representing a letter by typist-1 to train on
+;;;   letter-2, a string representing a letter by typist-2 to train on
+;;;   path-test, a string representing the letter to test against
+;;;   typed-by, the integer 1 or 2 depending on who typed the letter in question
+;;; Purpose:
+;;;   To calculate the evidence of typist-1 having written the
+;;;   letter represented by path-test
+;;; Produces:
+;;;   evidence, the evidence of typist-1 having written the letter
+;;; Preconditions:
+;;;   letter-1 is a valid letter written by typist-1
+;;;   letter-2 is a valid letter written by typist-2
+;;;   typed-by represents which typist wrote the letter represented by path-test
+;;; Postconditions:
+;;;   evidence is given in db, as defined by Jaynes' evidence
+;;;   If evidence is positive, typist-1 is expected to have written the letter
+;;;   If evidence is negative, typist-2 is expected to have written the letter
+(define evidence-calculator-individual
+  (lambda (letter-1 letter-2 path-test typed-by)
+    (let*([counts-1
+           (create-counts 28 1)]
+          [counts-2
+           (create-counts 28 1)])
+
+      (train! counts-1 path-typist-1 letter-1)
+      (train! counts-2 path-typist-2 letter-2)
+      
+      (let* (
+             [test-letter
+              (if (= typed-by 1)
+                  (path-typist-1 path-test)
+                  (path-typist-2 path-test))]
+            
+            [ll-L-T1
+             (log-likelihood (path-original path-test)
+                             test-letter
+                             counts-1)]
+
+            [ll-L-T2
+             (log-likelihood (path-original path-test)
+                             test-letter
+                             counts-2)])
+            
+        (*
+         10 (/ (- ll-L-T1 ll-L-T2)
+               (log 10)))))))
+
+;;; Procedure:
+;;;   evidence-calculator-pair
+;;; Parameters:
+;;;   letters-1, a pair of strings representing letters by typist-1 to train on
+;;;   letters-2, a pair of strings representing letters by typist-2 to train on
+;;;   path-test, a string representing the letter to test against
+;;;   typed-by, the integer 1 or 2 depending on who typed the letter in question
+;;; Purpose:
+;;;   To calculate the evidence of typist-1 having written the
+;;;   letter represented by path-test
+;;; Produces:
+;;;   evidence, the evidence of typist-1 having written the letter
+;;; Preconditions:
+;;;   letters-1 is a pair of valid letters written by typist-1
+;;;   letters-2 is a pair of valid letters written by typist-2
+;;;   typed-by represents which typist wrote the letter represented by path-test
+;;; Postconditions:
+;;;   evidence is given in db, as defined by Jaynes' evidence
+;;;   If evidence is positive, typist-1 is expected to have written the letter
+;;;   If evidence is negative, typist-2 is expected to have written the letter
+(define evidence-calculator-pair
+  (lambda (letters-1 letters-2 path-test typed-by)
+    (let*([counts-1
+           (create-counts 28 1)]
+          [counts-2
+           (create-counts 28 1)])
+
+      (train! counts-1 path-typist-1 (car letters-1))
+      (train! counts-1 path-typist-1 (cadr letters-1))
+      (train! counts-2 path-typist-2 (car letters-2))
+      (train! counts-2 path-typist-2 (cadr letters-2))
+      
+      (let* (
+             [test-letter
+              (if (= typed-by 1)
+                  (path-typist-1 path-test)
+                  (path-typist-2 path-test))]
+            
+            [ll-L-T1
+             (log-likelihood (path-original path-test)
+                             test-letter
+                             counts-1)]
+
+            [ll-L-T2
+             (log-likelihood (path-original path-test)
+                             test-letter
+                             counts-2)])
+            
+        (*
+         10 (/ (- ll-L-T1 ll-L-T2)
+               (log 10)))))))
+
+;;; Procedure:
+;;;   evidence-calculator-all
+;;; Parameters:
+;;;   letters-1, a list of three strings representing letters
+;;;              by typist-1 to train on
+;;;   letters-2, a list of three strings representing letters
+;;;              by typist-2 to train on
+;;;   path-test, a string representing the letter to test against
+;;; Purpose:
+;;;   To calculate the evidence of typist-1 having written the
+;;;   letter represented by path-test
+;;; Produces:
+;;;   evidence, the evidence of typist-1 having written the letter
+;;; Preconditions:
+;;;   letters-1 is a list of valid letters written by typist-1
+;;;   letters-2 is a list of valid letters written by typist-2
+;;;   (equal? (length letters-1) 3)
+;;;   (equal? (length letters-2) 3)
+;;; Postconditions:
+;;;   evidence is given in db, as defined by Jaynes' evidence
+;;;   If evidence is positive, typist-1 is expected to have written the letter
+;;;   If evidence is negative, typist-2 is expected to have written the letter
+(define evidence-calculator-all
+  (lambda (letters-1 letters-2 path-test)
+    (let*([counts-1
+           (create-counts 28 1)]
+          [counts-2
+           (create-counts 28 1)])
+
+      (train! counts-1 path-typist-1 (car letters-1))
+      (train! counts-1 path-typist-1 (cadr letters-1))
+      (train! counts-1 path-typist-1 (caddr letters-1))
+      (train! counts-2 path-typist-2 (car letters-2))
+      (train! counts-2 path-typist-2 (cadr letters-2))
+      (train! counts-2 path-typist-2 (caddr letters-2))
+      
+      (let* (
+             [test-letter (path-unknown path-test)]
+            
+            [ll-L-T1
+             (log-likelihood (path-original path-test)
+                             test-letter
+                             counts-1)]
+
+            [ll-L-T2
+             (log-likelihood (path-original path-test)
+                             test-letter
+                             counts-2)])
+            
+        (*
+         10 (/ (- ll-L-T1 ll-L-T2)
+               (log 10)))))))
+    
+(define first-tests
+  '(("1" "4" "18" 2)
+    ("1" "4" "9" 2)
+    ("1" "4" "16" 1)
+    ("1" "4" "8" 1)
+    ("1" "9" "18" 2)
+    ("1" "9" "4" 2)
+    ("1" "9" "16" 1)
+    ("1" "9" "8" 1)
+    ("1" "18" "9" 2)
+    ("1" "18" "4" 2)
+    ("1" "18" "16" 1)
+    ("1" "18" "8" 1)
+    ("8" "4" "18" 2)
+    ("8" "4" "9" 2)
+    ("8" "4" "16" 1)
+    ("8" "4" "1" 1)
+    ("8" "9" "18" 2)
+    ("8" "9" "4" 2)
+    ("8" "9" "16" 1)
+    ("8" "9" "1" 1)
+    ("8" "18" "9" 2)
+    ("8" "18" "4" 2)
+    ("8" "18" "16" 1)
+    ("8" "18" "1" 1)
+    ("16" "4" "18" 2)
+    ("16" "4" "9" 2)
+    ("16" "4" "8" 1)
+    ("16" "4" "1" 1)
+    ("16" "9" "18" 2)
+    ("16" "9" "4" 2)
+    ("16" "9" "8" 1)
+    ("16" "9" "1" 1)
+    ("16" "18" "9" 2)
+    ("16" "18" "4" 2)
+    ("16" "18" "8" 1)
+    ("16" "18" "1" 1)))
+
+(define second-tests
+  '((("1" "16") ("4" "9") "8" 1)
+    (("1" "16") ("4" "18") "8" 1)
+    (("1" "16") ("9" "18") "8" 1)
+    (("8" "1") ("4" "9") "16" 1)
+    (("8" "1") ("4" "18") "16" 1)
+    (("8" "1") ("9" "18") "16" 1)
+    (("8" "16") ("4" "9") "1" 1)
+    (("8" "16") ("4" "18") "1" 1)
+    (("8" "16") ("9" "18") "1" 1)
+    (("1" "16") ("4" "9") "18" 2)
+    (("1" "16") ("4" "18") "9" 2)
+    (("1" "16") ("9" "18") "4" 2)
+    (("8" "1") ("4" "9") "18" 2)
+    (("8" "1") ("4" "18") "9" 2)
+    (("8" "1") ("9" "18") "4" 2)
+    (("8" "16") ("4" "9") "18" 2)
+    (("8" "16") ("4" "18") "9" 2)
+    (("8" "16") ("9" "18") "4" 2)))
+
+(define third-tests
+  '((("1" "8" "16") ("4" "9" "18") "3")
+    (("1" "8" "16") ("4" "9" "18") "7")
+    (("1" "8" "16") ("4" "9" "18") "10")
+    (("1" "8" "16") ("4" "9" "18") "11")
+    (("1" "8" "16") ("4" "9" "18") "15")
+    (("1" "8" "16") ("4" "9" "18") "22")))
+
+; Raw-results for single-letter attribution
+(display "Single-letter Tests:\n")
+(display "Format: (t1-letter t2-letter original written-by): evidence\n")
+(display "---------------------------------------------------------\n")
+(map (lambda (x)
+       (display x)
+       (display ": ")
+       (display (evidence-calculator-individual (car x)
+                                       (cadr x)
+                                       (caddr x)
+                                       (cadddr x)))
+       (display "\n"))
+     first-tests)
+
+; Raw-results for two-letter attribution
+(display "\nTwo-letter Tests:\n")
+(display "Format: ((t1-letters) (t2-letters) original written-by): evidence\n")
+(display "---------------------------------------------------------------\n")
+(map (lambda (x)
+       (display x)
+       (display ": ")
+       (display (evidence-calculator-pair (car x)
+                                 (cadr x)
+                                 (caddr x)
+                                 (cadddr x)))
+       (display "\n"))
+     second-tests)
+
+; Raw-results for three-letter attribution
+(display "\nThree-letter Tests:\n")
+(display "Format: ((t1-letters) (t2-letters) original): evidence\n")
+(display "----------------------------------------------------\n")
+(map (lambda (x)
+       (display x)
+       (display ": ")
+       (display (evidence-calculator-all (car x)
+                                (cadr x)
+                                (caddr x)))
+       (display "\n"))
+     third-tests)

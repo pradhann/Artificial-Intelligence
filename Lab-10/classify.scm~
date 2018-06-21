@@ -1,0 +1,58 @@
+;;
+;; File
+;;   classify.scm
+;;
+;; Authors
+;;   Jerod Weinman
+;;     Documentation for decision-tree-classify
+;;   YOUR NAME AND BOX# HERE
+;;
+;; Summary
+;;   Implementation of decision-tree classification
+;;
+;; Provides
+;;   (decision-tree-classify decision-tree     instance)
+
+;;
+;; Procedure
+;;   decision-tree-classify
+;;
+;; Purpose
+;;   Classify an instance using a decision-tree
+;;
+;; Parameters
+;;   decision-tree, a decision tree
+;;   instance, an association list
+;;
+;; Produces
+;;   label, a value
+;;
+;; Preconditions
+;;   instance is an association list whose keys are attributes
+;;   decision tree-is a decision tree, which is either a label or a list 
+;;      whose car is an attribute and whose cdr is an association list 
+;;      with attribute values as keys and decision trees as values.
+;;
+;; Postconditions
+;;   label is a classification for the instance
+
+(load "learning.scm")
+(load "dtree.scm")
+(load "restaurant.scm")
+(load "mushroom.scm")
+
+(define decision-tree-classify
+  (lambda (decision-tree classification)
+    (cond
+      ((not (pair? decision-tree)) decision-tree)
+      (else
+       (let* (
+              [root-attr (car decision-tree)]
+              [root-attr-val-pair
+               (assoc root-attr classification)]
+              [root-attr-val (cdr root-attr-val-pair)]
+              [subtree-pair (assoc root-attr-val (cdr decision-tree))]
+              [next-dtree (cdr subtree-pair)])
+         (decision-tree-classify next-dtree classification))))))
+              
+    

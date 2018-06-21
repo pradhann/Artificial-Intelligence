@@ -1,0 +1,28 @@
+(load "charmodel.scm")
+(load "hmm.scm")
+
+(define counts
+  (create-counts 28 1))
+
+(count-conditionals! "/home/weinman/courses/CSC261/data/mills/original/18.txt"
+                     "/home/weinman/courses/CSC261/data/mills/corrupted/typist2/18.txt"
+                     counts)
+
+(normalize-counts! counts)
+
+(log-likelihood  "/home/weinman/courses/CSC261/data/mills/original/18.txt"
+                     "/home/weinman/courses/CSC261/data/mills/corrupted/typist2/18.txt" counts)
+
+
+
+;;; Lab 8
+
+(define count-structure
+  (create-counts 28 1))
+
+(count-transistions! "/home/weinman/courses/CSC261/data/mills/original/4.txt"
+                     count-structure)
+
+(count-transistions!
+ "/home/weinman/courses/CSC261/data/mills/original/16.txt"
+ count-structure)

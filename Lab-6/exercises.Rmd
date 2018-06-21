@@ -1,0 +1,27 @@
+---
+title: "Problem 1: Expressing First-Order Logic"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### 8
+#####b
+$\neg$ Wrote (*Gershwin*,_EleanorRigby_ )
+
+#####c
+Wrote(*Gershwin*, _TheManILove_) $\vee$ Wrote(*McCartney*,_TheManILove_)
+
+#####d
+$\exists$ s Wrote(*Joe*,s)
+
+#####h
+$\forall$ s Wrote(*Gershwin*,s) => $\exists$ p,a Sings(p,s,a)
+
+#####j
+$\exists$ a,d Sings(*BHoliday*, _TheManILove_,a) $\wedge$ CopyOf(d,a) $\wedge$ Owns(*Joe*,d)
+
+#####l
+$\forall$ a ($\forall$ s Sings(*BHoilday*, s,a)) => $\exists$ d Copyof(d,a) $\wedge$ Owns(*Joe*,d)

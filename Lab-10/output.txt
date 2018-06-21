@@ -1,0 +1,14 @@
+Script started on Mon Apr 23 20:05:40 2018
+[?1034hbash-3.2$ exitmzscheme -l lang/plt-pretty-big-text.ss -f driver.scm
+Testing  test-decision-tree-function
+2 success(es) 0 failure(s) 0 error(s) 2 test(s) run
+
+ Accuracy of the resulting decision tree on the same data for
+ mushroom examples -------------------
+Accuracy: 1
+
+Data for Part B obtained by running run-trials
+(1 7889/20310 6007/40620 1801/16925 6051/67700 8231/101550 3299/50775 11093/203100 7973/203100 343/8124 2453/50775 1209/33850 6601/203100 5791/203100 5417/203100 1468/50775 919/33850 1899/67700 2143/101550 1377/67700 4129/203100)bash-3.2$ exit
+exit
+
+Script done on Mon Apr 23 20:06:00 2018

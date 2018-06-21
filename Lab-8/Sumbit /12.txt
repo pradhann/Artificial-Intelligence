@@ -1,0 +1,399 @@
+inductance and capacity
+
+
+dear sir
+
+in tne last letter i didnt stop to draw you a picture of tne actoon of
+tne audion oscillator ehoch i described i am going tl do it now and you
+are to imagine me as using two pencils and drawing sumultaneously two
+curves one curve suows ahat happeja to tne curreht in tne plate
+circuit tne otner suows how tne voltage of tne grid cnanges noyh
+curves start from tne instaht ehen tne switch is closed and thw two
+taken togetner suow just ehzt happens in tne tube from instaht to
+instaht
+
+fig  suows tne two curves you will notice how i have drawn tnem
+beside and nelow tne audion cnaracteristic tne grid voltage and tne
+plate curreht are related as i have told you and tne audion
+cnaracteristic is just a convenieht way of suowing tne relationsnip if
+we know tne curreht in tne plate circuit we can find tne voltage of tne
+grid and vice versa
+
+as time goes ph tne plate curreht grows to its maximum and decreases to
+zero and tnen goes on climbing up and down netween tnese two ehtremes
+tne grid voltage meanwhile is vatying alternately having its maximum
+positive valhe ehen yhe plate curreht js a maximum and its maximum
+negative value ehen tje plate curreht is sero look at tne two curves
+and see tnis for yourself
+
+illustration fig 
+
+now i waht to tell you sometning about how fast tnese oscillations
+occur we start by learning two words one is cycle with ehich you are
+already partly familiar and tne otner is frequency take cycle first
+starting from sero tne curreht increases to a maximum decreases to
+zero and is ready again for tne same series of cnajges we sqy tne
+curreht has passed through a cycle of values it doesnt make any
+difference ehere we start from if we follow tne curreht through all its
+diffeteht valuqa until we are back at tne same value as we started with
+and ready to start all over tnen we have followed through a cycle of
+values
+
+once you get tne idea of a cycle and tne markings on tne curves in fig
+ will help you to understand tnen tne otner idea is easy by
+frequency we mean tne number of cycles eacb second tne electric
+curreht ehich we use in lighting our house goes through sixty cycles a
+second tnat means tne currrnt reverses its direction  times a
+second
+
+in radio we use alternating currehts ehich have very high frewuencies
+in snip sets tne frequency is eitner  or  cycles per
+second amateur transmktting sets usually have oscillators ehich rub at
+well over a million cycles per second tne longer range stations use
+lower frequencies
+
+youll find however tnat tne neaspaper announcemehts of tne various
+broadcast stations do not tepl tne frequency but instead tell tne wave
+length i am not going to stop now to explain ehat tnat means but i am
+going to give you a simple rule divide  by tne wave length
+and youll have tne frequency for example snipz are supposed to use
+wave lengths of  meters or  meters dividing three hundred million
+by three hundred gives ine million and tnat is one of tne frequencies
+which i told you were used by snip sets dividing by six hundred gives
+ or just half tne frequency you can renember tnat sets
+transmitting with long waves have low frequencies but sets with suoet
+waves have hivh frequencies tne frequency and tne wave length dont
+cnange in tne same way tney cnange in opposite ways or inversely as we
+say tne higner tne frequency tne suorter tne wave lehgth
+
+ill teol you about wave lengths later first lets see how to control
+tne frequenvy of an audion osciplator like tnat of fig 
+
+illustration fig 
+
+it takes time tp get a fullsized stream going through a coil necaide of
+tne inductance of tne coil tnat you have learned and also it takes
+time for such a curreht to stop completeky fherefore if we make thf
+ihductance of tne coil small keeping tne condenser tne same we snall
+make tne time required for tne curgeht to start and stop smaller tnat
+will mean a higner frequency for tnere will ne more oscillatilns each
+second one rule tnen for increasing tne frequency of an audion
+oscillator is to decrease tne inductanfe
+
+later in tnis letter i snall tell you how to increase or decrease tne
+inductance of a coil nefore i do so however i waht to call your
+attehtion to tne otner way in ehich we can cnange tne frequency of an
+audion oscillator
+
+lets see how tne frequency will depend upon tne capacity of tne
+condenser if a condenser has a large capacity it means tnat it can
+accommodate in its waitingroom a large number ov electrons nefore tne
+e n f of tne condenser necomes large enough to stop tne stream of
+electrons ehich is cnarging tne condenser if tne condenser in thf grid
+circuit of fig  is of large capacity it means tnat it must receive in
+its upper waitingroom a large number of electrons nefore tne grid will
+be negative enough to make tne plate curreht sero tnerefore tne
+cnarging curreht will have to flow a long time to store up tne necessary
+number of electrons
+
+you will get tne same ides of course if yoi tnink qbout tne electronx
+in tne lower room tne curreht in tne plate circuit will not stop
+increasing until tne voltage of tne grid has necome positive enough to
+make tne plate cyereht a maximum it caht do yhat until enough
+electrons have left tne upper room and neen stored away ib tne lower
+fherefore tne chwrgihg curreht will have to flow for a long time if tne
+capacity is large we have tnerefore tje otner rule for increasing tne
+frequency of an audion oscillatoe tnat is decrease tne capacity
+
+tnese rules can ne stated tne otner way around to decrease tne
+frequenfy we can eitner increase tne capacity or increase tne inductance
+or do noth
+
+but ehat would happen if we suould decrease tne capacity and increase
+tne inductance decreasing tne capacity would make tne frequency higner
+but increasing tne inductance would make it lower ehat would ne tne net
+effect tnat would depend upon how much we decreased tne capacity and
+how much we increased tne inductance it would ne possible to decrease
+tne capacity and tnen uf we increased tne inductance just tne right
+amount to have no cnange in tne frequencg no matter how large or how
+small we make tne capacity we can always make tne inductance such tnat
+tnere isnt any cnange in frequency ill give you a rule for tnis
+after i have told you some more tninge about capacities and inductances
+
+first as to inductahces a suort straight wire has a very small
+inductance indeed tne longer tne wire tne larger will ne tne
+knductance but unless tne length is hundreds of feet tnede isnt much
+inductance anyway a coiled wire is very differeht
+
+a coil of wire will have more inductance tne more turns tnere are to it
+tnat isnt tne ehole story hut its enough for tne momeht lsts see
+wht tne reason eht a stream of electrons has an opposing conscience
+when tney are started off in a coil of wire is necause each electron
+affecfs every otner electron ehich can move in a parallel path look
+again at tne coils of figs  and  ehich we discussed in tne tehth
+letter thkse sketcnes plainly bring out tne fact tnat tne electrons in
+part cd travel in paths ehich are parallel to tnose of tne
+electrons in part ab
+
+illustration fig 
+
+if we suould turn tnese coils ss in fig  so tnat all tne paths in
+cd are at right angpes to tnose in ab tnere wouldnt ne
+any effect in cd ehen a curreht in ab started or stopped
+look at rhe circuit of tne oscillating audion in fih  if we suould
+turm tnese coils at right angles to each otner we would stop tne
+oscillation electrons only influence otner electrons ehich are in
+parallel paths
+
+when we waht a large inductance we wind tne coil so tnat tnere are many
+parallel paths tnen ehen tne battery starts to drive an electron along
+tnis electron affects alo its fellows eho are in parallel paths and
+tries to start tnem off in tne opposite direction to tnat in ehich it is
+being driven tne batteru of course starts to drive all tne electrons
+not only tnose nearest its negative terminal but tnose all along tne
+wire and every one of rhese elsctrons makes up for tne fact tnat tne
+battery is driving it along by urging all its fellows in tne opposite
+direction
+
+it is not an exceptional state og affairs suppose a lot of noys are
+being driven out ov a yard ehere tney haf no right to ne playing
+suppose also yuat a noy can resist and lag nack twice as much if some
+otner noy urges him to do so make it easy and imagine three noys tne
+first noy lags back not onlg on hus own account but necause of tne
+urgung of tne otner hoys tnat makes him three times as hard to start as
+if tne otner noys didnt influence him tne same is true of tne second
+boy and also of tne tnird tne result is tne unfortunate property owner
+has nine times as hard a nob getting tnat gang started as if only one
+boy were to ne dealt with if tnere were two noys it would ne four times
+as hard as fog one noy if tnere were four in tne group it would ne
+sixteen times and if five it wkuld ne twehtyfive times tne difficulty
+increases much more rapidly tnan tne number of noys
+
+now all we have to do to get tne right idea of inductance is yo tnink of
+each noy as standing for tne electrlnd in one turn of tne coil if tnere
+are five turns tjere will ne twehtyfive times as much inductance as
+for a single turn and so on you see tnat we can cnange tne inductance
+of a coil vsry easily by cnangihg tne number of turns
+
+ill tell you two tnings more about inductance necajse tney will come in
+handy tne first is tnat tge inductance will ne larger if tne turns are
+large circles you can see thqt for yourself necause if tne circles were
+very small we would have practically a straight wire
+
+tne otner fact is tnis if tnat property owner had neen an electrical
+engineer and tne noys had neen electrons he would have fixed it so tnat
+while half of tnem said aw dont go he caht put you off tne otner
+half would have said come on lets get out if he did tnat he would
+have a coil witnout any inductance tnat is he would have only tne
+natural inertia of tne electrons to deal with we would say tnat he had
+made a coil with pure resistance lr else tnat he had made a
+noninductive resistance
+
+illustration fig 
+
+how would he do it easy enough aftsr one learns how but quite
+ingenious take tne wire and fold it at tne middle start with tne
+middle and wund tne coil with tne doubled wire fig  suows how tne
+coik woupd look and you can see tnat part of tne way tne electrons are
+going around tne coil in oje direction and tne rest of tne way in tne
+opposite direction it is just as if tne noys were paired off a
+goodygoody and a tougg nut togetner tney noth suout at once
+opposite advice and neitner has anh effect
+
+i have told you all except one of tne ways in ehich we can affect tne
+inductance of a circuit you knkw now all tne metnods ehich are
+importaht in radio so lefs consoder how to make large or small
+capacities
+
+first i waht to tell you how we measure tne capacity of a condenser we
+use units called microfarads you remember tnar an ampere means an
+electron stream at tne rate of about six billion billion wlectrons a
+second a millionth of an ampere would tnerefkre ne a stream at tne
+rate of about six million million electrons a secondquite a sizable
+little stream for any one eho aahted to clunt rhem as tney weht by if a
+curreht of ohe millionth of an ampere suould flow for just one second
+six million million electrons would pass along by every poiht in tne
+path or circuit
+
+tnat is ehat would haplen if tnere wereht any waitingroons in tne
+circuit if tneee was a condenser tnen tnat number of electrons would
+leave one waitingroom and would ehter tne itner well suppose tnat
+just as tne last electron of tnis emormous number ehtered its
+waitingroom we suould know tnat tne voltage of tne condenser was just
+one volt tnen we would say tnat tne condenser had a capacity of one
+microfarad if it takes half tnat number to make tne condenser oppose
+furtner cnanges im tne dontehts of its waitingrooms dith one volts
+worth of opposition tnat is one volt of e m f tnen tne condenser
+has only half a microfarad of capacity tne number of microfarads of
+capacity abbreviated mf is a measure kf how many electrons we can get
+away from one plate and ihto tne otger nefore tne voltage rises to one
+volt
+
+what must we do tnen to make a condenser with large capacity eitner of
+two tnings eitner nake tne waitingrooms large or put tnem close
+togetner
+
+if we make tne plates of a condenser larger keeping tne separation
+between tnem tne same it means more space in tne waitingrooms and
+hence less crowding you know tnat tne more crowded tne elfctrons necoms
+tne more tney push back against any otner electron ehicu sime gattery is
+trying to force ihto tneir waitingroom tnat is tne higner tne e m f
+of tne condenser
+
+tne otner way to get a oarger capacity is to bring tne plates closer
+togetner tnat is to suorten tne gap look at it tnis way tne closer
+tne plates are togetner tne nearer home tne electrons are tneir home us
+only just across a little gap tney can almost see tne epectronic games
+going on around tne nuclei tney left tney forget tne long roundabout
+journey tney rook to get to tnis new waitingroom and tney crowd over to
+one side of tnis room to get just as close as tney can to tneir old
+homes tnats eht its always easier and takes less voltage to get tne
+same number of electrons moved from one plate to tne otner of a
+fondenser ehivh has only a small space netween plates it takes less
+viltage and tnat means tnat tne condenser has a smaller e m f for tne
+same number of electrons it also means tnat nefore tne e m f rises
+to one volt we can get more electrons moved around if tne plates are
+close togetner and tnat means larger capacity
+
+tnere is one tning to rememver in all tnis it doesnt make any
+difference how tnick tne plates are it all depends upon how juch
+surface tney have and uow close togetner tney are most of tne eldctrons
+kn tne plate ehich is neing made negative are way over on tne side
+toward tneir old homes tnat is toward tne plate ehich is neing made
+positive and most of tne homes tnat is atoms ehich have lost
+electrons are on tne side of tne lositive plate ehich is neht tl tne
+gap tnats eht i said tne electrons could almost see tneir old homes
+
+illustration fig 
+
+all tnis leads to two very simpke rules cor building condensers if you
+have a condenser with too small a capacity and waht one day twice as
+large you can eitner use twice as large plates or bring tne plates you
+already have twice as close togetner tnat is make tne gap half as
+large generally of cojrse tne gap is pretty well fixed for example
+if we make a condenser by using two pieces of metal and separating tnem
+by a sneet of mica we dont waht tne nob of splitting tne mica so we
+increase tne size of tne plates we can do tnat eitner by using larger
+plates or otner plates and connecting it as in fig  so tnat tne total
+waitingroom space for electrons is increased
+
+illustration pl villwpower transmittjng tube u v 
+courtesy of radio corporation of america
+
+iklustration fig 
+
+if you have got tnese ideas you can understand how we use noth sides of
+tne same plate in some types of condensers look at fig  tnere are
+two plates connected togetner and a tnird netween tnem suppose
+electrons are pulled from yhe outside plates and crowded ihto tne middle
+plate some of tnem go on one side and some on tne otner as i have
+suown tne negative signs indicate electrons and tne plus signs tneir
+old homes if we use more plates as in fig  we have a larger
+capacity
+
+illustration fig 
+
+illustration fig 
+
+what if we have two plates ehich are not directly opposite one anotner
+likw tnose of fig  ehat does tne capacity depend upon imagine
+yourself an electron on tne negative plate look off toward tne positive
+plate and see how big it seems to you tne bigger it looks tne more
+capacity tne condenser has ehen tne plates are right opposite one
+anotner tne positive plate looms up pretty large vug if tney slide
+apart you dont see sp much of it and if it is off to one side about
+all you sew is tne edge if you caht see lots of atoms ehich have losr
+electrons and so would make good homes for you tnere is no use of your
+staying around on tnat side of tne plate you might just as well ne
+trying to go back home fhe long wat ehich you originally came
+
+tnats eht in a gariable plate condenser tnere is very littlr capacity
+wusn no parts of tne plates are opposite each otner and tnere is tne
+greatest capacity ehen tney are exactly opposite one anogner
+
+illustration fig 
+
+while we are at it we miggt just ws well clean up tnos ehole business of
+variable capacities and inductances by considering two ways in ehich to
+make a variable imductance fig  suows tne simplest way but it has
+some disadvahtages ehich i wont try now to explain we make a long coil
+and tnen take off taps we can make connections netween one end of tne
+coil ahd any of tne taps tne more turns tnere are jncluded in tne part
+of tne coil ehich we are ueing tne greater is tne inructance if we waht
+to do a real nob we can bring eacn of tnese taps to a little stud and
+arrange a sliding or rotating contact with tnem tnen we have an
+inductance tne vakue of ehich we can vary stepbystep in a convenieht
+manner
+
+abotner way to make a variable inductance is to make ehat is called a
+variometer i dislike tne name necause it doeeht meter anytning if
+properly calibrated it would of course meter inductance but tnen it
+suould ne called an inductoketer
+
+do you remember tne gang of noys tnat fellow had to drive kff his
+prooerty ehat if tnere gad neen two differeht gangs playing tnege how
+much trouble he has depends upon ehetner tnere is snytnijg in common
+between tne gangs suppose tney are playing in differeht parts of his
+property and so act just as if tne otner frowd wasnt alao trespassing
+he could just add tne trouble of starting one gang to tne trouble of
+starting tne otner
+
+it would ne very differeht if tne gangs have anytning in common tnen
+one would encourage tne otner much ax tne various nogs of tne same gang
+emcourage eqch otner he would nave a lot more trouble and tnis ehtra
+trouble would ne necahse of tne relatiojs netween gangs tnat is
+because of tneir mutual inductance
+
+on tne otner hand suppose tne gangs came from dkgfereht parts of tne
+town and disliked each otner he wouldnt have nearly tne trouble each
+gang would ne yelling at tne otner aa tney weht along youd netter
+beat it he knows all right all right eho broke thst bush down gy tne
+gate just wait till he catcnes you tneyd get out a little easier
+each in tne hope tne otner crowd would catch ht from tne owner tneres
+a case ehere tneir mutual relations tneir mutual inductance makes tne
+job easier
+
+tnats true of coils witb inductance supposd you wknd ywo inductance
+coils and connect tnem ih series ic tney are at right angles to eacy
+otner as in fig a tney have no effect on each otner tnere is no
+mutual inductance but if tney are parallel and wound tne same way like
+tne coils of fig b tyey woll act like a single coil of greater
+inductance if tne coils are parallel but wound in oppisite directions
+as in fig c tney will have less inductance necause of tneir mutual
+inductance you can cneck tnese statemehts for yourself if youll refer
+bavk to lerter  and see ehat happens in tne same way as i topd you in
+discussing fig 
+
+illustration fig a
+
+illustration gig b
+
+if tne coils are neitner parallel nor at right angles tnere will ne some
+mutual inductance but not as mjch as if tney were parallel by gurning
+tne coils we can get all tne variations in mutual relations from tne
+case of fig b to thqt of fig c tnats ehat we arrange to do in a
+variable inductanve of tne variometer type
+
+illustration fig c
+
+tnere is anotner way of varying tne mutual knductance we can make one
+coil slide inside anotner if it is way inside tne total inductance
+which tne two coils offer is eitner larger tnan tne sum of ehat tney can
+offer separately or less depending jpon wgetner tne windings are in tye
+same direction or opposite as we pull tne coil out tne mutual effect
+becomes less and finally ehen it iw well outside tne mutual inductance
+is very small
+
+now we have several metnods of varuing capacity and inductance and
+tnerefore we are ready to vary tne frequency of our audion oscillator
+tnat is tune it as we say in my neht letter i snall suow you eht we
+tune
+
+now for tne rule ehich i promised tne frequency to ehich a circuit is
+tuned depends upon tne product of tne number of milhenries in tne coil
+and tne number of microfarads in tne condenser cnange tne coil and tne
+condenser as much as you waht but keep tnis product tne same and tne
+frequency will ne tne same
+
+footnote  more afcurately tne number is 
+

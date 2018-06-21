@@ -1,0 +1,19 @@
+References:
+  Written/online sources used:
+    
+    Lab: Got the  starter code, documentaion for the algorithm that we were to implement, necessary mdp files from Jerod Weinman.
+    http://www.cs.grinnell.edu/~weinman/courses/CSC261/2018S/assignments/mdp.pdf
+
+    TextBook: Referenced the textbook for the psuedocode of policy-iteration and  value-iteration
+
+  Help obtained:
+    Went to office hours to ask on what values of gamma and epsilon is needed to get the same policy as the one in the textbook
+
+    Went to office hours to ask for help in implementing calc_meu
+
+
+Academic honesty certification:
+  Our initials below confirm that the above list of sources
+  is complete AND that I/we have not talked to anyone else
+  (e.g., CSC 261 students) about the solution to this problem
+  Initials:  NP, DP

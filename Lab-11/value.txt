@@ -1,0 +1,86 @@
+Script started on Sat 28 Apr 2018 05:22:15 PM CDT
+condon$ make value 
+clang -Wall -g -std=gnu99  -c mdp.c
+clang -Wall -g -std=gnu99  -o value_iteration value_iteration.c mdp.o utilities.o
+condon$ make value [C[C[C[C[C[C[C[C[7Pexit./policy_iteration 0.99999 0.0001 4x3.mdp [1P[1P[1P[1P[1P[1P[1@v[1@a[1@l[1@u[1@e
+0.812
+0.762
+0.705
+0.868
+X
+0.655
+0.918
+0.660
+0.611
+1.000
+-1.000
+0.388
+condon$ ./value_iteration 0.99999 0.0001 4x3.mdp [C[1P [1P [1P [1P [1P [1P [1P 1 6 x4.mdp 
+-0.232
+X
+X
+-1.000
+-0.182
+X
+-0.104
+-0.248
+-0.132
+-0.081
+-0.036
+X
+-0.091
+-0.036
+0.019
+0.076
+X
+X
+X
+0.134
+0.340
+0.290
+0.240
+0.184
+0.396
+X
+X
+X
+0.446
+X
+X
+-1.000
+0.496
+0.559
+0.609
+0.578
+0.446
+X
+0.669
+0.624
+X
+0.674
+0.724
+0.669
+-1.000
+X
+0.787
+X
+0.944
+0.894
+0.837
+0.799
+1.000
+X
+X
+0.844
+X
+X
+X
+0.894
+-4000.000
+X
+1.000
+0.944
+condon$ exit
+exit
+
+Script done on Sat 28 Apr 2018 05:24:26 PM CDT

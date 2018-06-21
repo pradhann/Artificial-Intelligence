@@ -1,0 +1,1 @@
+("6.7" ("545cd7487beef482f5018c4dbeaba0bc2d22507f" . "f711912570e7987dea0d32f09f831787264cff77") #"/home/weinman/module/search/module/node.scm" #"/home/weinman/module/search/module/problem.scm" #"/home/weinman/module/search/module/sort.scm" (collects #"lang" #"plt-pretty-big-text.rkt") (collects #"mzscheme" #"main.rkt"))

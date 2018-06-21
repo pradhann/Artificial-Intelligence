@@ -1,0 +1,15 @@
+
+
+
+(load "search.scm")
+(load "jump.scm")
+(load "problem.scm")
+(load "node.scm")
+(load "8puzzle.scm")
+
+;;; Making an easy 8-puzzle state
+
+
+(define eight-puzzle (eight-puzzle-problem))
+(define zero-fun (lambda (x) 0))
+(define eight-puzzle-state (random-eight-puzzle-state 3))

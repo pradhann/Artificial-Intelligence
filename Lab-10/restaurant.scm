@@ -1,0 +1,26 @@
+(define restaurant-attributes
+  '( ("Alt" #t #f) 
+     ("Bar" #t #f) 
+     ("Fri" #t #f)
+     ("Hun" #t #f) 
+     ("Pat" "None" "Some" "Full") 
+     ("Price" "$" "$$" "$$$")
+     ("Rain" #t #f)
+     ("Res" #t #f)
+     ("Type" "French" "Thai" "Burger" "Italian")
+     ("Est" "0-10" "10-30" "30-60" ">60")))
+
+(define restaurant-examples
+  '((#t ("Alt" . #t) ("Bar" . #f) ("Fri" . #t) ("Hun" . #t) ("Pat" . "Some") ("Price" . "$$$") ("Rain" . #f) ("Res" . #t) ("Type" . "French")  ("Est" . "0-10"))
+    (#f ("Alt" . #t) ("Bar" . #f) ("Fri" . #t) ("Hun" . #t) ("Pat" . "Full") ("Price" . "$")   ("Rain" . #f) ("Res" . #f) ("Type" . "Thai")    ("Est" . "30-60"))
+    (#t ("Alt" . #f) ("Bar" . #t) ("Fri" . #f) ("Hun" . #f) ("Pat" . "Some") ("Price" . "$")   ("Rain" . #f) ("Res" . #f) ("Type" . "Burger")  ("Est" . "0-10"))
+    (#t ("Alt" . #t) ("Bar" . #f) ("Fri" . #t) ("Hun" . #t) ("Pat" . "Full") ("Price" . "$")   ("Rain" . #t) ("Res" . #f) ("Type" . "Thai")    ("Est" . "10-30"))
+    (#f ("Alt" . #t) ("Bar" . #f) ("Fri" . #t) ("Hun" . #f) ("Pat" . "Full") ("Price" . "$$$") ("Rain" . #f) ("Res" . #t) ("Type" . "French")  ("Est" . ">60"))
+    (#t ("Alt" . #f) ("Bar" . #t) ("Fri" . #f) ("Hun" . #t) ("Pat" . "Some") ("Price" . "$$")  ("Rain" . #t) ("Res" . #t) ("Type" . "Italian") ("Est" . "0-10"))
+    (#f ("Alt" . #f) ("Bar" . #t) ("Fri" . #f) ("Hun" . #f) ("Pat" . "None") ("Price" . "$")   ("Rain" . #t) ("Res" . #f) ("Type" . "Burger")  ("Est" . "0-10"))
+    (#t ("Alt" . #f) ("Bar" . #f) ("Fri" . #f) ("Hun" . #t) ("Pat" . "Some") ("Price" . "$$")  ("Rain" . #t) ("Res" . #t) ("Type" . "Thai")    ("Est" . "0-10"))
+    (#f ("Alt" . #f) ("Bar" . #t) ("Fri" . #t) ("Hun" . #f) ("Pat" . "Full") ("Price" . "$")   ("Rain" . #t) ("Res" . #f) ("Type" . "Burger")  ("Est" . ">60"))
+    (#f ("Alt" . #t) ("Bar" . #t) ("Fri" . #t) ("Hun" . #t) ("Pat" . "Full") ("Price" . "$$$") ("Rain" . #f) ("Res" . #t) ("Type" . "Italian") ("Est" . "10-30"))
+    (#f ("Alt" . #f) ("Bar" . #f) ("Fri" . #f) ("Hun" . #f) ("Pat" . "None") ("Price" . "$")   ("Rain" . #f) ("Res" . #f) ("Type" . "Thai")    ("Est" . "0-10"))
+    (#t ("Alt" . #t) ("Bar" . #t) ("Fri" . #t) ("Hun" . #t) ("Pat" . "Full") ("Price" . "$")   ("Rain" . #f) ("Res" . #f) ("Type" . "Burger")  ("Est" . "30-60"))))
+

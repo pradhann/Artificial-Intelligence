@@ -1,0 +1,75 @@
+---
+title: "Resolution for Unicorns"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### Part A: CNF
+
+In the syntax of Propositional Logic, the knowledge base for *unicorn-kb* can be represented as    
+(Mythical => Immortal)
+$\wedge$   
+($\neg$ Mythical => ($\neg$ Immortal $\wedge$ Mammal))
+$\wedge$   
+((Immortal $\vee$ Mammal) => Horned)
+$\wedge$   
+(Horned => Magical).
+
+We apply the following steps to this knowledge base to convert it into **CNF**.
+
+**a) Eliminate <=>**
+
+$\rightarrow$ The knowledge base does not contain any <=>
+
+
+**b) Eliminate =>**
+
+($\neg$ Mythical $\vee$ Immortal)
+$\wedge$   
+( $\neg$ ($\neg$ Mythical) $\vee$ (($\neg$ Immortal) $\wedge$ Mammal)
+$\wedge$   
+(($\neg$ (Immortal $\vee$ Mammal)) $\vee$ Horned)
+$\wedge$   
+($\neg$ Horned $\vee$ Magical)
+
+
+**c) Move** $\neg$ **inwards** 
+
+($\neg$ Mythical $\vee$ Immortal)
+$\wedge$   
+(Mythical $\vee$ ($\neg$ Immortal $\wedge$ Mammal))
+$\wedge$   
+(($\neg$ Immortal $\wedge$ $\neg$ Mammal) $\vee$ Horned)
+$\wedge$   
+($\neg$ Horned $\vee$ Magical)
+
+**d) Distributing $\vee$ over $\wedge$ wherever possible to get the CNF**
+
+($\neg$ Mythical $\vee$ Immortal)
+$\wedge$  
+(Mythical $\vee$ $\neg$ Immortal)
+$\wedge$   
+(Mythical $\vee$ Mammal)
+$\wedge$   
+(Horned $\vee$ $\neg$ Immortal)
+$\wedge$   
+(Horned $\vee$ $\neg$ Mammal)
+$\wedge$   
+($\neg$ Horned $\vee$ Magical)
+
+
+#### Part B: Resolution
+
+From Part 2 of this Lab, `(tt-entails unicorn-kb 'Horned)` returned #t.Since unicorn-kb entails Horned, we know that (unicorn-kb $\wedge$ $\neg$ Horned) is unsatisfiable. So, we will apply resolution to (unicorn-kb $\wedge$ $\neg$ Horned). If we get the empty clause while resolving (unicorn-kb $\wedge$ $\neg$ Horned), we can conclude that unicorn-kb entails Horned.
+
+
+Resolving  $\neg$ Horned with (Horned $\vee$ $\neg$ Immortal), we get $\neg$ Immortal. We add $\neg$ Immortal to unicorn-kb. Now, resolving $\neg$ Immortal and ($\neg$ Mythical $\vee$ Immortal), we get $\neg$ Mythical. Add $\neg$ Mythical to unicorn-kb.
+
+Resolving $\neg$ Horned with (Horned $\vee$ $\neg$ Mammal), we get $\neg$ Mammal. We add $\neg$ Mammal to unicorn-kb. Now, resolving $\neg$ Mammal and (Mythical $\vee$ Mammal), we get Mythical.
+Add Mythical to unicorn-kb.
+
+Notice that at this point unicorn-kb contains both $\neg$ Mythical and Mythical. Finally, resolving $\neg$ Mythical and Mythical gives us the empty clause. This implies that (unicorn-kb $\wedge$ $\neg$ Horned) is unsatisfiable and hence, unicorn-kb entails Horned. 
+

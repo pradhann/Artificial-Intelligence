@@ -1,0 +1,1 @@
+(require "mancala.scm" "tournament.scm")

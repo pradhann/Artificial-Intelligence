@@ -1,0 +1,24 @@
+References:
+  
+  Labs:
+  The implementation of (tt-entails? knowledge-base query) was obtained from Part 1 of this Lab
+
+  Online Source:
+  The documentation for unicorn-kb, potria-kb and liars-kb was copied/influenced from the problem
+  description given in the Lab:
+  http://www.cs.grinnell.edu/~weinman/courses/CSC261/2018S/assignments/logic.pdf
+
+  Textbook:
+  The steps of converting knowledge base into CNF was obtained from the textbook 
+  Artificial Intelligence: A Modern Approach, Peter Norvig & Stuart J. Russell (p. 253-254)
+
+
+
+  Help obtained:
+  [None]
+
+Academic honesty certification:
+  Our initials below confirm that the above list of sources
+  is complete AND that I/we have not talked to anyone else
+  (e.g., CSC 261 students) about the solution to this problem
+  Initials:  NP

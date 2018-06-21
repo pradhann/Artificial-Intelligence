@@ -1,0 +1,7 @@
+(require "mancala.scm")
+(require "mancala-player.scm")
+(require "cutoff-minimax.scm")
+
+
+(define mancala (make-mancala-game))
+(define mancala-player1-eval (simple-mancala-eval #t))

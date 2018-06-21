@@ -1,0 +1,5 @@
+(require "search.scm")
+(require "problem.scm")
+(require "node.scm")
+(require "jump.scm")
+(load "8puzzle.scm")

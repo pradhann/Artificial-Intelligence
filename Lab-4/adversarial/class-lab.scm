@@ -1,0 +1,162 @@
+(require "mancala.scm")
+(require "mancala-player.scm")
+(require "cutoff-minimax.scm")
+(require "game.scm")
+(require "minimax.scm")
+(require "barranca.scm")
+(require "evaluation.scm")
+(require "alphabeta.scm")
+
+
+
+;'(define barranca (make-barranca-game 4 8))
+;(define barranca-player1-utility (barranca-utility-fun #t 8))
+
+(define mancala (make-mancala-game))
+(define nripesh-eval1 (best-mancala-eval #t))
+(define simple-eval1 (simple-mancala-eval #t))
+
+(define nripesh-eval2 (best-mancala-eval #f))
+(define simple-eval2 (simple-mancala-eval #f))
+
+(define nripesh-player1 
+  (make-alpha-beta-player mancala 5 nripesh-eval1))
+(define nripesh-player2 
+  (make-alpha-beta-player mancala 5 nripesh-eval2))
+
+(define simple-player1 
+  (make-alpha-beta-player mancala 5 simple-eval1))
+(define simple-player2 
+  (make-alpha-beta-player mancala 5 simple-eval2))
+
+
+(define mancala-lazy-player
+  (lambda (state)
+    (caar ((game-successors-fun mancala) state))))
+
+    ;; File
+;;   mancala-eval.scm
+;;
+;; Authors
+;;   Reilly Noonan Grant
+;;      Box 3627
+;;   Medha Gopalaswamy
+;;      Box 3623
+;; Summary
+;;   All functions relevent to the best-mancala-eval
+;;
+;; Provides
+;;   (sub-list lst start end)
+;;   (empty-holes lst)
+;;   (total-stones lst)
+;;   (eval-generator lst)
+;;   (best-mancala-eval player)
+;;   (grantrei-gopalasw-mancala-best-player1)
+;;   (grantrei-gopalasw-mancala-best-player2)
+
+
+
+
+;;Procedure     :sub-list
+;;Parameters    :lst, a list
+;;               start, a nonegative integer
+;;               end, an integer greater than start
+;;Preconditions :lst is a list of numbers,
+;;               start is a nonnegative integer
+;;               end is a nonnegative integer greater than start
+;;Postconditions:
+(define sub-list 
+  (lambda (lst start end)
+    (let kernal ([old-list lst]
+                 [new-list (list)]
+                 [current-index 0])
+      (cond [(null? old-list) (reverse new-list)]
+            [(and (<= start current-index)
+                  (>= end current-index))
+                  (kernal (cdr old-list) 
+                          (cons (car old-list) new-list)
+                          (+ 1 current-index))]
+            [else
+             (kernal (cdr old-list) 
+                          new-list
+                          (+ 1 current-index))]))))
+            
+            
+;;Procedure     :empty-holes
+;;Parameters    :lst, a list of numbers representing a row on a mancala board
+;;Preconditions :lst is a list of numbers representing a row on a mancala board
+;;Postconditions:returns the number of empty holes in the row represented by lst
+(define empty-holes
+  (lambda (lst)
+    (length (filter zero? lst))))
+
+;;Procedure     :total-stones
+;;Parameters    :lst, a list of numbers representing a row on a mancala board
+;;Preconditions :lst is a list of numbers representing a row on a mancala board
+;;Postconditions:returns the number of stones in the row represented by lst
+(define total-stones
+  (lambda (lst)
+    (apply + lst)))
+    
+
+;;Procedure     :eval-generator
+;;Parameters    :lst, a list of numbers representing weights for a mancala 
+;;               evaluation function 
+;;Preconditions :lst is a list of numbers
+;;Postconditions:generates an evaluation function for a mancala gameboard
+(define eval-generator
+  (lambda (lst)
+    (lambda (player)
+      (lambda (state)
+        (let* ([board (cdr state)]
+               [p1-manc (list-ref board 6)]
+               [p2-manc (list-ref board 13)]
+               [p1-row (sub-list board 0 5)]
+               [p2-row (sub-list board 7 12)]
+               [p1-empty (empty-holes p1-row)]
+               [p2-empty (empty-holes p2-row)]
+               [p1-row (total-stones p1-row)]
+               [p2-row (total-stones p2-row)]
+               [eval-val (apply +
+                                (map * 
+                                     (list p1-manc p1-empty p1-row
+                                           p2-manc p2-empty p2-row) 
+                                     lst))])
+          (if player eval-val
+              (* -1 eval-val)))))))
+
+
+;;Procedure     :best-mancala-eval
+;;Parameters    :player, a boolean representing if the evaluation 
+;;               function is for player one or two
+;;Preconditions :player is a boolean
+;;Postconditions:returns a function which takes a game state of 
+;;               mancala and returns a number evaluating the value of 
+;;              the boards position
+(define best-mancala-eval
+  (eval-generator (list 2 1 1 -1 -3/2 0)))
+        
+
+(define mancala (make-mancala-game)) 
+
+;;Our players for the tournament       
+(define grantrei-gopalasw-mancala-best-player1
+  (make-alpha-beta-player mancala 5 (best-mancala-eval #t)))
+(define grantrei-gopalasw-mancala-best-player2
+  (make-alpha-beta-player mancala 5 (best-mancala-eval #f)))
+          
+          
+          
+          
+          
+          
+
+
+
+
+
+   
+;(alpha-beta-search barranca 
+;                  (game-start-state barranca)
+;                  5
+;                  barranca-player1-utility)

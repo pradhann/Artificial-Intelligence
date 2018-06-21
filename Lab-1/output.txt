@@ -1,0 +1,16 @@
+Script started on Mon Jan 29 15:35:54 2018
+[?1034hbash-3.2$ export PS1="$"
+$export PS1="$"[C[C[Cit[K[Cmzscheme -l lang/plt-pretty-big-text.ss -f test-polynomial.scm
+2 success(es) 0 failure(s) 0 error(s) 2 test(s) run
+4 success(es) 0 failure(s) 0 error(s) 4 test(s) run
+1 success(es) 0 failure(s) 0 error(s) 1 test(s) run
+3 success(es) 0 failure(s) 0 error(s) 3 test(s) run
+2 success(es) 0 failure(s) 0 error(s) 2 test(s) run
+2 success(es) 0 failure(s) 0 error(s) 2 test(s) run
+3 success(es) 0 failure(s) 0 error(s) 3 test(s) run
+2 success(es) 0 failure(s) 0 error(s) 2 test(s) run
+2 success(es) 0 failure(s) 0 error(s) 2 test(s) run
+$exit
+exit
+
+Script done on Mon Jan 29 15:36:12 2018

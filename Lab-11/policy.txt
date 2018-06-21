@@ -1,0 +1,88 @@
+Script started on Sat 28 Apr 2018 05:25:47 PM CDT
+condon$ mke[K[Kake policy 
+clang -Wall -g -std=gnu99  -c mdp.c
+clang -Wall -g -std=gnu99  -c policy_evaluation.c 
+clang -Wall -g -std=gnu99  -o policy_iteration policy_iteration.c  \
+mdp.o utilities.o policy_evaluation.o
+condon$ make policy [C[C[C[C[C[C[C[C[8Pexitclear[2Ppwdexitscript policy.txt [1Pvalue[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[Kscript value.txt [C[C[C[C[C[C[C[Cclear[Kmake clean[C[C[C[C[C[C[C[Cpwd[Kclear./policy_iteration 0.99999 0.0001 16x4.mdp [6P 0.[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake policy [K[C[C[C[C[C[C[C[C[25@./policy_iteration 0.9 0.01 16x4.mdp[C[6@9999 0.00[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1@4[6@x3.mdp[C[C[C[1P[1P[1P[C[1P 
+3
+0
+0
+3
+0
+2
+3
+0
+2
+0
+0
+2
+condon$ ./policy_iteration 0.99999 0.0001 4x3.mdp [1P [1P [1P [1P [1P [1P [1P 1 6 x4.mdp 
+3
+0
+0
+0
+3
+0
+3
+0
+1
+1
+3
+0
+1
+1
+1
+3
+0
+0
+0
+3
+3
+0
+0
+0
+3
+0
+0
+0
+3
+0
+0
+0
+1
+1
+3
+3
+2
+0
+3
+3
+0
+1
+3
+0
+0
+0
+3
+0
+3
+0
+0
+3
+0
+0
+0
+3
+0
+0
+0
+3
+0
+0
+0
+0
+condon$ exit
+exit
+
+Script done on Sat 28 Apr 2018 05:27:53 PM CDT

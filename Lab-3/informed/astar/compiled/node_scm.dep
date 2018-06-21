@@ -1,0 +1,1 @@
+("6.7" ("8b77dae1083b4c19fac8bf0f14a88890d8f19741" . "0da14ca306f7e1e14953f4d0b377f5a16a427d97") (collects #"lang" #"plt-pretty-big-text.rkt") (collects #"mzscheme" #"main.rkt"))

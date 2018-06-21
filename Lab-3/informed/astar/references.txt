@@ -1,0 +1,30 @@
+
+References:
+  Written/online sources used:
+
+ 		1) Adapted the code for uniform-cost-search authored by Jerod Weinman for our implementaion of a-star-seach
+     We copied the documentaion provided in the code for uniform-cost-search as well in our implementaion of a-star-search
+
+     	2) Looked the formula for the solution of quadratic equation from:
+     	https://en.wikipedia.org/wiki/Quadratic_formula
+
+     	3) Referenced the formula for the sum of an arithmetic series from:
+     	http://www.mathwords.com/a/arithmetic_series.htm
+
+     	4) Copied all the scheme files from the "compiled" folder from the MathLan user account of Jerod Weinman which served as the starter code for the implementation of our heuristic function and a-star-search.    
+
+     	5) Got the idea of using arithmetic series for heuristic from Lab 3.
+     	http://www.cs.grinnell.edu/~weinman/courses/CSC261/2018S/assignments/a-star.pdf
+
+
+
+
+Help obtained:
+    [None]
+    
+Academic honesty certification:
+  Our initials below confirm that the above list of sources
+  is complete AND that I/we have not talked to anyone else
+  (e.g., CSC 261 students) about the solution to this problem
+  Initials:  NP, MC
+                     

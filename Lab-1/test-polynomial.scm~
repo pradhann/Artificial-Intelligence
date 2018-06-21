@@ -1,0 +1,4 @@
+(require rackunit)
+(require rackunit/text-ui)
+
+(load "polynomial.scm")

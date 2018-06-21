@@ -1,0 +1,112 @@
+(module evaluation lang/plt-pretty-big
+  (provide best-mancala-eval)
+  (require "mancala.scm") ; add any other modules you may need
+  (require "game.scm")
+
+
+  (define mancala (make-mancala-game))
+;; 
+;; Procedure
+;;   eval-player1
+;;
+;; Purpose
+;;   evaluate player1's mancala state
+;;
+;; Parameters
+;;   board, a list
+;;
+;; Produces
+;;   utility, a value
+;;
+;; Preconditions
+;;   [None]
+;;
+;; Postconditions
+;;   utility is a combination of the number of stones in
+;;   mancala, weighted stones adjacent to empty hole and 
+;;   weighted index of empty hole.
+
+  (define eval-player1
+    (lambda (board)
+      (let evals([index 0]
+                 [value (list-ref board 0)]
+                 [utility 0])
+        (cond
+          ((= 6 index) (+ value utility))
+          ((= value 0)
+           (evals (+ 1 index)
+                  (list-ref board (+ 1 index))
+                  (+ utility (* 0.45 (list-ref board (- 12 index))) (* 0.6 index))))
+          (else
+           (evals (+ 1 index)
+                  (list-ref board (+ 1 index))
+                  utility))))))
+;; 
+;; Procedure
+;;   eval-player2
+;;
+;; Purpose
+;;   evaluate player2's mancala state
+;;
+;; Parameters
+;;   board, a list
+;;
+;; Produces
+;;   utility, a value
+;;
+;; Preconditions
+;;   [None]
+;;
+;; Postconditions
+;;   utility is a combination of the number of stones in
+;;   mancala, weighted stones adjacent to empty hole and 
+;;   weighted index of empty hole.
+
+    (define eval-player2
+    (lambda (board)
+      (let evals([index 12]
+                 [value (list-ref board 12)]
+                 [utility 0])
+        (cond
+          ((= 6 index) (+ utility (list-ref board 13)))
+          ((= value 0)
+           (evals (- index 1)
+                  (list-ref board (- index 1))
+                  (+ utility (* 0.45 (list-ref board (- 12 index))) (* 0.6 (- index 7)))))
+          (else
+           (evals (- index 1)
+                  (list-ref board (- index 1))
+                  utility))))))
+;; 
+;; Procedure
+;;   best-mancala-eval
+;;
+;; Purpose
+;;   Create a procedure for evaluating a player's mancala state
+;;
+;; Parameters
+;;   player, a boolean
+;;
+;; Produces
+;;   eval-fun, a procedure
+;;
+;; Preconditions
+;;   [None]
+;;
+;; Postconditions
+;;   eval-fun takes a state and returns a difference of 
+;;   combination of number of stones in mancala, weighted
+;;   stones adjacent to empty hole and weighted index of
+;;   empty hole.
+  (define best-mancala-eval
+    (lambda (player)
+      (lambda (state)
+        (let ([board (cdr state)])
+          (if player
+          (- (eval-player1 board)
+             (eval-player2 board))
+          (- (eval-player2 board)
+             (eval-player1 board))
+          )))))
+
+  ) ; module

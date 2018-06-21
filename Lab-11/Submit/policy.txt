@@ -1,0 +1,89 @@
+Script started on Mon 30 Apr 2018 04:19:26 PM CDT
+turing$ make policy utilities 
+clang -Wall -g -std=gnu99  -c mdp.c
+clang -Wall -g -std=gnu99  -c policy_evaluation.c 
+clang -Wall -g -std=gnu99  -o policy_iteration policy_iteration.c  \
+mdp.o utilities.o policy_evaluation.o
+clang -Wall -g -std=gnu99  -c utilities.c
+turing$ make policy utilities [C[C[C[C[C[C[C[Cexit[K./value_iteration 0.99999 0.0001 16x4.mdp [1P4x3[C[C[C[C[C[1P[1P[1P[1P[1P[1@p[1@o[14@licy_iteration[1@C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[1P
+3
+0
+0
+3
+0
+2
+3
+0
+2
+0
+0
+2
+turing$ ./policy_iteration 0.99999 0.0001 4x3.mdp [1P [1P [1P [1P [1P [1P [1P 1 6x4.mdp 
+3
+0
+0
+0
+3
+0
+3
+0
+1
+1
+3
+0
+1
+1
+1
+3
+0
+0
+0
+3
+3
+0
+0
+0
+3
+0
+0
+0
+3
+0
+0
+0
+1
+1
+3
+3
+2
+0
+3
+3
+0
+1
+3
+0
+0
+0
+3
+0
+3
+0
+0
+3
+0
+0
+0
+3
+0
+0
+0
+3
+0
+0
+0
+0
+turing$ exit
+exit
+
+Script done on Mon 30 Apr 2018 04:21:43 PM CDT

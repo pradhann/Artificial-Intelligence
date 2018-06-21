@@ -1,0 +1,17 @@
+References:
+
+  Written/online sources used:
+
+  Working on the in class lab was vital to understand how to declare facts and define rules in PROLOG
+  In class Lab: http://www.cs.grinnell.edu/~weinman/courses/CSC261/2018S/labs/prolog.html
+
+  Textbook AIMA: I looked into the textbook for examples of sentences in first order logic (p.304, 311)
+
+Help Obtained: 
+    None
+
+Academic honesty certification:
+  Our initials below confirm that the above list of sources
+  is complete AND that I/we have not talked to anyone else
+  (e.g., CSC 261 students) about the solution to this problem
+  Initials:  NP

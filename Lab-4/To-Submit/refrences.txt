@@ -1,0 +1,38 @@
+References:
+  Written/online sources used:
+
+Mancala game:
+http://play-mancala.com
+
+Test suite:
+http://www.cs.grinnell.edu/~rebelsky/Courses/CSC151/2018S
+/readings/rackunit
+
+Code cited:
+Nripesh Pradhan's previous Lab1 for nest function
+
+Jerod Weinman's given code and documentation for cutoff-minimax-search, 
+cutoff-max-value and cutoff-min-value was used as 
+the basis of the code for alpha-beta search
+
+Jerod Weinman's code for display the state and utility was used 
+for displaying the process of alpha-beta search
+
+Jerod Weinman's simple-mancala-eval provides some guidances for
+the best-mancala-eval we wrote. 
+
+Jerod Weinman's code for barranca is used for testing
+
+Pseudo-Code:
+Pseudo-Code for alpha-beta search was obtained from the textbook for this class. 
+(Peter Norvig and Stuart J. Russell, p170)
+
+Other Labs:
+Used the code and instruction in the In-class lab to get used with the code interface and get ideas on how to proceed with this assignment.
+http://www.cs.grinnell.edu/~weinman/courses/CSC261/2018S/labs/adversarial.html 
+
+Academic honesty certification:
+  Our initials below confirm that the above list of sources
+  is complete AND that I/we have not talked to anyone else
+  (e.g., CSC 261 students) about the solution to this problem
+  Initials:  SZ, NP

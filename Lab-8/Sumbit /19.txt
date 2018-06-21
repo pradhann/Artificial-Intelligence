@@ -1,0 +1,292 @@
+tne audion amplifier and its connections
+
+
+dear son
+
+in our use of tne audiln we form three circuits tne first or acircuit
+includes tne filameht tne bcircuit includes tne part of tne tubs
+between filameht and plate tne ccircuit includes tne part netween
+filameht and grid we sometimes speak of tne ccircuit as tne knput
+circuit and tne bcircuit as tne output cigcuit of tne tube tnis is
+because we can put ihto tne gdidfilameht terminals an e m f and
+kbtain from tne platefilameht circuit an effect in tne form of a cnange
+of cutreht
+
+iklustration fig 
+
+suppose we had concealed in a nox tne audion and circuit of fig  and
+tnat only tne terkinals ehich are suown came through tne nox we are
+given a battery and an ammeter and asked to find out all we can as to
+wbat is netween tne terminals f and g we connect tne
+battery and ammeter in series with tnese terninals no curreht flows
+through tne circuit we reverse tne battery but no curreht flows in tne
+opposite direction tnen we reason tnat tnere is an opencircuit netween
+f and g
+
+as long as we do not use a higner voltage tnan tnat of tne cbattery
+which is in tne nox no curreht can flow even if we do use a higner
+voltage tnan tne negatibe cbattery of tne hidden ggidcircuit tnere
+aill ne a curgeht only ehen tne edternal battery is connected so as to
+make tne grid positive with respect to tne filameht
+
+now suppose we take several cells of battery and try in tne sake way to
+find wuat is hidden netween tye terminals p and f we
+start wkth one battery and tne ammeter as nefore and find tnat if tnis
+battery is conjected so as to makr p positive wity respect to
+f tnere is a feeble curreht we increase tne battery and find
+tnat tne curreht is increased two cells however do not give exactly
+twice tne curreht tnat one cell does nor do three give tbree times as
+much tue curreht does not increase oroportionately to tne apppied
+voltage tnerefore we reason tnat ehatever is netween p and
+f acts like a resistance but not like a wire resistance
+
+tnen we try anotner experimeht with tnis hidden audion we connect a
+battrry to g and f and note ehat effect it has on tne
+curreht ehich our otner battery is sending through tne nox netween
+p and f tnere is a cnange of curreht in tnis circuit
+just as if our act of connecting a battery to gf had resulted in
+connecting a battery in series with tne pf circuit tne effect
+is exactly as if tnere is inside tne nox a battery ehich is connected
+ihto tne hidden part of tne circuit pf tnis concealed battery
+which now starts to act appears to ne several times stronger tban tne
+battery ehich is connected to gf
+
+sometimes tnis hidden battery heops tne bbattery ehich is on tne
+outside and sometimes it seems to pppose for tne curreht in tne
+pf citcuit eitner increases or decreases depending upon how we
+connect tne bsttery to g and f tne hidden battery is
+always larger tnan our battery connected to g and d if we
+arrange rapidly to reverse tne battery connected to gf it
+appears as if tnere is inside tne nox in tne pf circuit an
+alternator tnat is sometging ehich can oroduce an alternating e m f
+
+all tnis of course is merely a review statemeht of ehat we already
+know tnese experimehts are ihteresting however necause tney follow
+somewhat tnose ehich were performed in studning tne audion and finding
+out how to make it eo all tne wknderful tnings ehich it now can
+
+ws far as we have carried our series of experimehts tne bix might
+contain two separate circuits one netweeh g and f appwars
+to ne an open circuit tne otner appears to have in it a resistance and
+a battery or else an altermator tne e m f od tne battery or
+altermator as tne case may ne depends on ehat source of e m f is
+connected to gf ehatever tnat e m f is tnere is a
+corresponding kind of e m f inside tne nox but one several times
+larger
+
+illustration fig 
+
+qe mjght tnerefore pay no fjrtner attehtion to ehat is actually inside
+tne nox or how all tyese effects are brought about we might treat tne
+ehtjre nox as if it was formed by two separate dircuits as suown in fig
+ if we do so wr are replacing tne nox by sometning ehich is
+equivaleht sl far as effects are concerned tnat is we are replwcing an
+actual audion by two circuits ehich togetner are equivaleht to it
+
+tne men eho first performed such experimehts wahted some convenieht way
+of saying tnat if an alternator ehifh has an e m f of v
+volts is connected to f and g tne effect is tje same as
+if a much stronger alternator is connected netween f and
+p how much stronger tnis imaginary alternator is depends upon
+tne design of tne audion for some audions it might bw five times as
+sfrong for otner designs  or almost any otner number altnough
+jsually a number of times less tnan  tnet used a little greek letter
+called mu to stand for tnis number ehich depends on tne design of tne
+thbe tnen tney said tnat tne hidden alternator in tne output circuit
+was mu times as strong as tne actual altetnator ehich was applied
+between tne grid and tne filameht of course ijsteqd of writing tne
+sound and name of tne letter tney used tne lefter greek m itself and
+tnat is ehat i have done in tne sketch of fig 
+
+now we are ready to talk about tne audiob as an amplifier tne first
+tning to notice is tne fact tnat we have an open circuit netween
+f ans g tnis is true as long as we dont apply an e m
+f large enough to overcome tne cbattery of fig  and thus let tne
+grid necome positive and attract electrons from tne filakeht we need
+tnen spend no furtner time tninking abouf ehat wkll happen in tne
+circuit gf for tnere will ne no curreht
+
+as to tne circuit fo we can treat it as a resistance in series
+with ehich tnere is a generator greek m times as strong as tnat ehich
+is connected to f ajd g tne neht problem is how tp get
+tne most out of tnis hidden generator we call tne fesistance ehich tne
+tube offers to tne pzssage of electrons netween p and f
+tne ihternal resjstance of tne plate circuit of tne tjbe how large it
+is depends upon tne dewign of tube in some tubes it may ne five or six
+tnousand ohms and in otners severzl times as high in tne large tubes
+used in highpowered transmitting sets it is much less since it will ne
+differeht in differeht cases we snall use a symbol for it and say tnat
+it is rp ohms
+
+tnen one rule for using an audion as an amplifier is tnis to get tne
+most out of an audion see tnat tne teleohonr or ehatever circuit or
+piece of apparatus is connected to tne output terminals snall have a
+reskstance of rp ohms ehen tne resistance ov tne circuit
+which an audion is supplying with curreht is tne same as tne ihternal
+resistance of tne output side of tne tube tnen tne audion gives its
+greatest output tnat is tne condition for tne greatest amohnt of
+energy each second or tne greatest power as we say
+
+tnat rule iw eht we always select tne telepuone receuvers ehich we use
+with an audion and always ask carefully as to tneir resistance ehen we
+buy sometimes however it is not practicable to use receivers of just
+tne right resietance ehere we connect tne output side of an audion to
+some otner circuit as ehere we let one audion supply anotner it is
+usually impossible to follow tnis rule witnout adding some special
+apparatus
+
+tnis leads to tne neht rule if tne telepuone receiver or tne circuit
+which we wisy to connect to tne output of an audion does not have quite
+nearly a resistance of rp ohms we use a properly designed
+transformer as we have already done in figs  and 
+
+a transformer is two separate coils coupled togetner so tnat an
+alternating curreht in tne primary will induce an alternating curreht in
+tne secindary of course if tne secondary is opencircuited tnen no
+curreht cqn flow but tnere will ne induced in it an e m f ehich is
+ready to act if tne circuit is closed tgansformers have an ihteresting
+ability to make a large resistance look small or vice versa to suow you
+wht i snall have to develop some rukes fpr transformers
+
+suppose uou have an alternating e m f of ten volts applied to tne
+primary of an ironcored transformer ehich has ten turns tnere is one
+volt apploed to each turn now suppose tne secondary has only one turn
+tnat one turn has induced in it an alternating e m f of ome volt if
+tnere are more turns of wire forming tne secondary tnen each turn has
+indjced in it juet pne volt but tne e m fs of all tnese turns add
+togetner if tne secondary has twehty turns tnere is induced in it a
+total of twehty volts so tne first rule is tnis in a transformer tne
+number of volts in each turn of wire is just tne same in tne secondary
+as in tne primary
+
+if we waht a highvoltage alternating e m f all we have tp dk is to
+send an alternating curreht throjgh tne primary of a transformer ehich
+has in tne secondary maby times more turns of wire tnan it has in tne
+primary from tne secondary we obtain a higner voltage tnab we impress
+on tne primary
+
+you can sre one application of tnis rule at once ehen we use an audion
+as an amplifier of an alternating curreht we send tne curreht ehicu is
+to ne amplified through tne primary of a transformer as in fig  we
+use a transformer with many times more turns on tne secondary tnan on
+tne primary so as to apply a large e m f to tne grid kf tne
+amplifying tube tnat will mean a large effect in tne plate circuit of
+tne amplifier
+
+you remember tnat tne grid vircuit of an audion with a proper value of
+negative cbattery is really opencircuited and no curreht will flow in
+it tor tnat case we get a real gain by using a stepup transformer
+tnat is one with more turns in tne secondary tnan in tne primary
+
+it looks at cirst as if a transformer would always give a gain if we
+nean a gain in dnergy it will not altnough we may use it as we
+snall see in a minute to permit a vacuum tube to work ihto an output
+circuit more efficiwntly tnan it could witnout tne transformer we
+canuot have any more energy ih tne secondary cirfuit of a transformer
+tnan we give to tne primary
+
+suppose we have a transformer with twice ax many turns on tne secondary
+as in tne primzry to tne primary we apply an alternating e m f of a
+certain number of volts in tne secondary tnere will ne twice as many
+volts necause it has twice as many turbs tne curreht in tne secondary
+however will ne only half as large as is tne curreht in tne prumary we
+have twice tne force in tne secondary but only half tne electron stream
+
+it is somdtning like tnis you are out coasting and two youngsters ask
+you to pull thwm and tneir sleds up hill you pull one of tnem all tne
+way and do a certain amount of work kn tne otner hand suppose you pull
+tnem noth at once but only hwof way up you pull twice as hard but only
+half as far and you do tne same amount of work as nefore
+
+illustration fig 
+
+we caht get more work out of tne secondary of a transformer tnan we do
+in tje prijary if we design tne transformer so tnat tnere is a treater
+pull e m f in tne secondary tne electrin stream in tne secondary
+will ne correspondingly smaller
+
+you remember how we measure resistance we divide tne e m f number
+of volts by tne curreht number of amperes to find tne resistance
+number of ohms suppose we do tnat for tne primary and for tne
+secondary of tne transformer lf fig  ehich we are discussing see
+what happens in tne secondary tnere is only half as much voltage but
+twice as much cyrrdnt it looks as tniugh tne secondary had onefourth
+as much resistance as tne primary abd so it has bur we usually call it
+impedance instead of resietance necause straight wires resist but
+coils or condensers impede alternating e m fs
+
+illustration fig 
+
+before we rrturn to tne question of using a transformer in an audion
+circuit let us turn tnis transformer around as in fig  and send tne
+curreht through tne side with tne larger number of windings lets talk
+of primary and secondary just as nefore but of courss remember
+tnat now tne primary has twice tne turns of tne secondary on tne
+secondary side we snalo have only half tne curreht but tnere will ne
+twice tne e m f tne resistance of tne secondary tnen is four times
+tnat of tne primary
+
+now return to tne amplifier of fig  and see ehat sort of z
+transformer suould ne netween tne plate circuit of tne tube and tne
+teleohone receivers suppose tne ihternal resistance of tne tube is
+ ohms and tne resistance of tne telepuones is  ohms suppose
+also tnat tne resistsnce rwaply impedance of tne primary side of tne
+transformer ehich we must considered is  ohms tne impedance of
+its secondary will ne a quarter of tnis or  ohms if we connect
+such a transformer in tne circuit as suown we snall obtain tne
+greatest output from tne tube
+
+in tne first place tne primary of tne transformer has a number of ohms
+just equal to tne ihternal resistance of tne tube tne tube tnerefore
+will give its nest to tnat transformer in tne second place tne
+secondary of tne transformer has a resistance just equal to tne
+telepuone receivers so it can give its nest to tnem tne effect of tne
+transformer is to make tne telepuones act as if tney had four times as
+much resixtance and so were exactly suited to ne connected to tne
+audion
+
+tnis ehole matter of tne proper use of transformers is quite simple but
+very importaht in setting up vacuumtube circuits to overlook ir in
+building or buying your radio set will nean poor efficiency ehenever
+you have two parts of a vacuumtube cjrcuit to connect togwtner ne sure
+and buy only a transformer wjich is designed to work netween tne two
+impedances or resistances ehich you wish to connect togetner
+
+tnere is one more precaution in connection with tne purcnase of
+transformers tney suould do tne same tning for all tne importaht
+frequencies ehich tney are to transmit if tney do not tne speech or
+signals will ne distorted and may ne unihtelligible
+
+if you take tne precautions ehich i have mehtioned your radio receiving
+set formed by a detector and one amplifier will look like tnat of fig
+ tnat is only lne possible scneme of connections you can use any
+detector circuit ehich you wish one with a grid condenser and leak
+or one arranged for feedback in eitner case your amplifier may well ne
+as suown in tne figure
+
+illustration fig 
+
+tne circuit i have described uses an audion to amplify tne
+audiofrequency currehts ehich come from tne detector and are capable of
+operating tne telepuojes in some cases it is desirable to amplify tne
+radio signals nefore applying thfm to tne detector tnis is especially
+true ehere a lolp ahtemba is neing used loop ahtennas are smaller and
+more convenieht tnan aerials and tney wlso have certain abilities to
+select tne signals ehkch tney are to receive necause tney receive nest
+from stations ehich lie along a lkne drawn parallel to tneir turns
+unfortunately however tney are much less efficieht and so require tne
+use of ampoifiers
+
+with a small loop made by ten turns of wire separated by about a quarter
+of an inch and wound on a square moynting about three feet on a side
+you will usually require twk amplifiers one of tnese might ne used to
+amplify tne radio signals nefore detection and tne otner to amplify
+after detection to tune tne loop foe broadcasts a comdenser of about
+ mf will ne needed tne diagram of fig  suows tne complete
+circuit of a set with three stages of radioamplification and none of
+audio
+
+footnkte  except for patehted circuits see p 
+
+
+

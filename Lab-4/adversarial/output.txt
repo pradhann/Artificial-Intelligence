@@ -1,0 +1,413 @@
+Script started on Mon Feb 19 16:35:50 2018
+Test-1 for barranca game (make-barranca-game 3 3))
+Expected Outcome:As mentioned in the comments of driver.scm, we expect the following
+paths to be explored:
+a) (1 3) (2)
+b) (1 2) (3)
+After exploring these two paths, the root node will update it's v and alpha
+to be -1. It now starts a new recursive call when MAX chooses 2.
+c) (2 3) (1)
+After this call, the value of MIN node doing the recursive call
+updates v=-1. Since alpha is -1 as well, the path ((2 1) (3)) will be
+pruned.
+d) ((3 2) (1))
+Similarly, the path ((3 1) (2)) will be pruned. MAX is losing in all the
+cases, so it returns the first evaluated action, choosing 1, as the best
+available action.
+
+Result of running alpha-beta-search:
+MAX state (#t () () (1 2 3))
+Min state (#f (1) () (2 3))
+MAX state (#t (1) (2) (3))
+Min state (#f (3 1) (2) ())
+Player 1: 3
+Player 2: 2
+MIN utility 1
+MAX state (#t (1) (3) (2))
+Min state (#f (2 1) (3) ())
+Player 1: 2
+Player 2: 3
+MIN utility -1
+Min state (#f (2) () (1 3))
+MAX state (#t (2) (1) (3))
+Min state (#f (3 2) (1) ())
+Player 1: 6
+Player 2: 1
+MIN utility -1
+Min state (#f (3) () (1 2))
+MAX state (#t (3) (1) (2))
+Min state (#f (2 3) (1) ())
+Player 1: 6
+Player 2: 1
+MIN utility -1
+
+
+Test-2 for barranca game (make-barranca-game 4 8))
+Expected Outcome:As mentioned in the comments of driver.scm, we expect the following
+paths to be explored:
+a) (3 1) (4 2)
+b) (4 1) (3 2)
+After exploring these two paths, the root node will update it's v and beta
+to be -1. It now starts a new recursive call when Min chooses 3.
+c) (2 1) (4 3)
+After this call, the value of MAX node doing the recursive call
+updates v=-1. Since beta is -1 as well, the path ((4 1) (2 3)) will be
+pruned.
+d) ((2 1) (3 4))
+Similarly, the path ((3 1) (2 4)) will be pruned. Goes back to the first node,
+we have :
+e) ((3 2) (4 1))
+f) ((4 2) (3 1))
+g) ((1 2) (4 3))
+h) ((4 2) (1 3))
+i) ((1 2) (3 4))
+j) ((3 2) (1 4))
+This return a evaluation number of action 2 is 1, which update the alpha to 1.
+Following prune is similar, for action 3 and action 4, we have:
+k) ((2 3) (4 1))
+l) ((4 3) (2 1))
+m) ((2 4) (3 1))
+n) ((3 4) (2 1))
+While ((1 3) (4 2)), ((4 3) (1 2)), ((1 3) (2 4)), ((2 3) (1 4)), ((1 4) (3 2)),
+((3 4) (1 2)), ((1 4) (2 3)), ((2 4) (1 3)) are all pruned.
+
+Result of running alpha-beta-search:
+MAX state (#t () () (1 2 3 4))
+Min state (#f (1) () (2 3 4))
+MAX state (#t (1) (2) (3 4))
+Min state (#f (3 1) (2) (4))
+MAX state (#t (3 1) (4 2) ())
+Player 1: 3
+Player 2: 8
+MAX utility -1
+Min state (#f (4 1) (2) (3))
+MAX state (#t (4 1) (3 2) ())
+Player 1: 4
+Player 2: 6
+MAX utility -1
+MAX state (#t (1) (3) (2 4))
+Min state (#f (2 1) (3) (4))
+MAX state (#t (2 1) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MAX state (#t (1) (4) (2 3))
+Min state (#f (2 1) (4) (3))
+MAX state (#t (2 1) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (2) () (1 3 4))
+MAX state (#t (2) (1) (3 4))
+Min state (#f (3 2) (1) (4))
+MAX state (#t (3 2) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (4 2) (1) (3))
+MAX state (#t (4 2) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (3) (1 4))
+Min state (#f (1 2) (3) (4))
+MAX state (#t (1 2) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (4 2) (3) (1))
+MAX state (#t (4 2) (1 3) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (4) (1 3))
+Min state (#f (1 2) (4) (3))
+MAX state (#t (1 2) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (3 2) (4) (1))
+MAX state (#t (3 2) (1 4) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (3) () (1 2 4))
+MAX state (#t (3) (1) (2 4))
+Min state (#f (2 3) (1) (4))
+MAX state (#t (2 3) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (4 3) (1) (2))
+MAX state (#t (4 3) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+Min state (#f (4) () (1 2 3))
+MAX state (#t (4) (1) (2 3))
+Min state (#f (2 4) (1) (3))
+MAX state (#t (2 4) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+Min state (#f (3 4) (1) (2))
+MAX state (#t (3 4) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+
+
+ Test to compare alpha-beta-search and cutoff-minimax-searchMAX state (#t () () (1 2 3 4))
+Min state (#f (1) () (2 3 4))
+MAX state (#t (1) (2) (3 4))
+Min state (#f (3 1) (2) (4))
+MAX state (#t (3 1) (4 2) ())
+Player 1: 3
+Player 2: 8
+MAX utility -1
+Min state (#f (4 1) (2) (3))
+MAX state (#t (4 1) (3 2) ())
+Player 1: 4
+Player 2: 6
+MAX utility -1
+MAX state (#t (1) (3) (2 4))
+Min state (#f (2 1) (3) (4))
+MAX state (#t (2 1) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MAX state (#t (1) (4) (2 3))
+Min state (#f (2 1) (4) (3))
+MAX state (#t (2 1) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (2) () (1 3 4))
+MAX state (#t (2) (1) (3 4))
+Min state (#f (3 2) (1) (4))
+MAX state (#t (3 2) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (4 2) (1) (3))
+MAX state (#t (4 2) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (3) (1 4))
+Min state (#f (1 2) (3) (4))
+MAX state (#t (1 2) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (4 2) (3) (1))
+MAX state (#t (4 2) (1 3) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (4) (1 3))
+Min state (#f (1 2) (4) (3))
+MAX state (#t (1 2) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (3 2) (4) (1))
+MAX state (#t (3 2) (1 4) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (3) () (1 2 4))
+MAX state (#t (3) (1) (2 4))
+Min state (#f (2 3) (1) (4))
+MAX state (#t (2 3) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (4 3) (1) (2))
+MAX state (#t (4 3) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+Min state (#f (4) () (1 2 3))
+MAX state (#t (4) (1) (2 3))
+Min state (#f (2 4) (1) (3))
+MAX state (#t (2 4) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+Min state (#f (3 4) (1) (2))
+MAX state (#t (3 4) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+MAX state (#t () () (1 2 3 4))
+Min state (#f (1) () (2 3 4))
+MAX state (#t (1) (2) (3 4))
+Min state (#f (3 1) (2) (4))
+MAX state (#t (3 1) (4 2) ())
+Player 1: 3
+Player 2: 8
+MAX utility -1
+Min state (#f (4 1) (2) (3))
+MAX state (#t (4 1) (3 2) ())
+Player 1: 4
+Player 2: 6
+MAX utility -1
+MAX state (#t (1) (3) (2 4))
+Min state (#f (2 1) (3) (4))
+MAX state (#t (2 1) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MAX state (#t (1) (4) (2 3))
+Min state (#f (2 1) (4) (3))
+MAX state (#t (2 1) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (2) () (1 3 4))
+MAX state (#t (2) (1) (3 4))
+Min state (#f (3 2) (1) (4))
+MAX state (#t (3 2) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (4 2) (1) (3))
+MAX state (#t (4 2) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (3) (1 4))
+Min state (#f (1 2) (3) (4))
+MAX state (#t (1 2) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (4 2) (3) (1))
+MAX state (#t (4 2) (1 3) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (4) (1 3))
+Min state (#f (1 2) (4) (3))
+MAX state (#t (1 2) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (3 2) (4) (1))
+MAX state (#t (3 2) (1 4) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (3) () (1 2 4))
+MAX state (#t (3) (1) (2 4))
+Min state (#f (2 3) (1) (4))
+MAX state (#t (2 3) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (4 3) (1) (2))
+MAX state (#t (4 3) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+Min state (#f (4) () (1 2 3))
+MAX state (#t (4) (1) (2 3))
+Min state (#f (2 4) (1) (3))
+MAX state (#t (2 4) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+Min state (#f (3 4) (1) (2))
+MAX state (#t (3 4) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+MAX state (#t () () (1 2 3 4))
+Min state (#f (1) () (2 3 4))
+MAX state (#t (1) (2) (3 4))
+Min state (#f (3 1) (2) (4))
+MAX state (#t (3 1) (4 2) ())
+Player 1: 3
+Player 2: 8
+MAX utility -1
+Min state (#f (4 1) (2) (3))
+MAX state (#t (4 1) (3 2) ())
+Player 1: 4
+Player 2: 6
+MAX utility -1
+MAX state (#t (1) (3) (2 4))
+Min state (#f (2 1) (3) (4))
+MAX state (#t (2 1) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MAX state (#t (1) (4) (2 3))
+Min state (#f (2 1) (4) (3))
+MAX state (#t (2 1) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (2) () (1 3 4))
+MAX state (#t (2) (1) (3 4))
+Min state (#f (3 2) (1) (4))
+MAX state (#t (3 2) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (4 2) (1) (3))
+MAX state (#t (4 2) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (3) (1 4))
+Min state (#f (1 2) (3) (4))
+MAX state (#t (1 2) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (4 2) (3) (1))
+MAX state (#t (4 2) (1 3) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (4) (1 3))
+Min state (#f (1 2) (4) (3))
+MAX state (#t (1 2) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+Min state (#f (3 2) (4) (1))
+MAX state (#t (3 2) (1 4) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (3) () (1 2 4))
+MAX state (#t (3) (1) (2 4))
+Min state (#f (2 3) (1) (4))
+MAX state (#t (2 3) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+Min state (#f (4 3) (1) (2))
+MAX state (#t (4 3) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+Min state (#f (4) () (1 2 3))
+MAX state (#t (4) (1) (2 3))
+Min state (#f (2 4) (1) (3))
+MAX state (#t (2 4) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+Min state (#f (3 4) (1) (2))
+MAX state (#t (3 4) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+3 success(es) 0 failure(s) 0 error(s) 3 test(s) run
+$ exit
+exit
+
+Script done on Mon Feb 19 16:36:13 2018

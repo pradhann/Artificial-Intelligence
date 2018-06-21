@@ -1,0 +1,29 @@
+
+References:
+  Written/online sources used:
+   Previous Labs:
+     Used decision-tree-learning written for the previous lab
+      
+
+  Code from the Lab:
+   Obtained analysis.scm from Jerod Weinman
+   Obtained the mushroom data from Jerod Weinman
+
+    Read the documentaion of functions in classify.scm to get an idea on how to implement the decision-tree-classify
+
+  TextBook:
+    Learned how to label the axes of the learning curve from the textbook. 
+    Figure 18.7 (p. 703)
+
+
+
+
+  Help obtained:
+    None
+
+
+Academic honesty certification:
+  Our initials below confirm that the above list of sources
+  is complete AND that I/we have not talked to anyone else
+  (e.g., CSC 261 students) about the solution to this problem
+  Initials:  NP, HM

@@ -1,0 +1,26 @@
+(require "mancala.scm")
+(require "mancala-player.scm")
+(require "cutoff-minimax.scm")
+(require "game.scm")
+(require "minimax.scm")
+(require "barranca.scm")
+(require "evaluation.scm")
+
+(define mancala (make-mancala-game))
+(define mancala-player1-eval (best-mancala-eval #t))
+
+(define mancala-player1 
+  (make-cutoff-minimax-player mancala 3 mancala-player1-eval))
+
+
+(define mancala-lazy-player
+   (lambda (state)
+      (caar ((game-successors-fun mancala) state))))
+
+(define mancala-player2-eval (best-mancala-eval1 #f))
+
+(define mancala-player2 
+  (make-cutoff-minimax-player mancala 3 mancala-player2-eval))
+
+
+(game-play mancala mancala-player1   mancala-player2)

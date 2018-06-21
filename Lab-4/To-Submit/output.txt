@@ -1,0 +1,737 @@
+Script started on Mon Feb 19 21:44:25 2018
+Test-1 for barranca game (make-barranca-game 3 3))
+Expected Outcome:As mentioned in the comments of driver.scm, we expect the following
+paths to be explored:
+a) (1 3) (2)
+b) (1 2) (3)
+After exploring these two paths, the root node will update it's v and alpha
+to be -1. It now starts a new recursive call when MAX chooses 2.
+c) (2 3) (1)
+After this call, the value of MIN node doing the recursive call
+updates v=-1. Since alpha is -1 as well, the path ((2 1) (3)) will be
+pruned.
+d) ((3 2) (1))
+Similarly, the path ((3 1) (2)) will be pruned. MAX is losing in all the
+cases, so it returns the first evaluated action, choosing 1, as the best
+available action.
+
+Result of running alpha-beta-search:
+MAX state (#t () () (1 2 3))
+MIN state (#f (1) () (2 3))
+MAX state (#t (1) (2) (3))
+MIN state (#f (3 1) (2) ())
+Player 1: 3
+Player 2: 2
+MIN utility 1
+MAX state (#t (1) (3) (2))
+MIN state (#f (2 1) (3) ())
+Player 1: 2
+Player 2: 3
+MIN utility -1
+MIN state (#f (2) () (1 3))
+MAX state (#t (2) (1) (3))
+MIN state (#f (3 2) (1) ())
+Player 1: 6
+Player 2: 1
+MIN utility -1
+MIN state (#f (3) () (1 2))
+MAX state (#t (3) (1) (2))
+MIN state (#f (2 3) (1) ())
+Player 1: 6
+Player 2: 1
+MIN utility -1
+
+
+Test-2 for barranca game (make-barranca-game 4 8))
+Expected Outcome:As mentioned in the comments of driver.scm, we expect the following
+paths to be explored:
+a) (3 1) (4 2)
+b) (4 1) (3 2)
+After exploring these two paths, the root node will update it's v and beta
+to be -1. It now starts a new recursive call when Min chooses 3.
+c) (2 1) (4 3)
+After this call, the value of MAX node doing the recursive call
+updates v=-1. Since beta is -1 as well, the path ((4 1) (2 3)) will be
+pruned.
+d) ((2 1) (3 4))
+Similarly, the path ((3 1) (2 4)) will be pruned. Goes back to the first node,
+we have :
+e) ((3 2) (4 1))
+f) ((4 2) (3 1))
+g) ((1 2) (4 3))
+h) ((4 2) (1 3))
+i) ((1 2) (3 4))
+j) ((3 2) (1 4))
+This return a evaluation number of action 2 is 1, which update the alpha to 1.
+Following prune is similar, for action 3 and action 4, we have:
+k) ((2 3) (4 1))
+l) ((4 3) (2 1))
+m) ((2 4) (3 1))
+n) ((3 4) (2 1))
+While ((1 3) (4 2)), ((4 3) (1 2)), ((1 3) (2 4)), ((2 3) (1 4)), ((1 4) (3 2)),
+((3 4) (1 2)), ((1 4) (2 3)), ((2 4) (1 3)) are all pruned.
+
+Result of running alpha-beta-search:
+MAX state (#t () () (1 2 3 4))
+MIN state (#f (1) () (2 3 4))
+MAX state (#t (1) (2) (3 4))
+MIN state (#f (3 1) (2) (4))
+MAX state (#t (3 1) (4 2) ())
+Player 1: 3
+Player 2: 8
+MAX utility -1
+MIN state (#f (4 1) (2) (3))
+MAX state (#t (4 1) (3 2) ())
+Player 1: 4
+Player 2: 6
+MAX utility -1
+MAX state (#t (1) (3) (2 4))
+MIN state (#f (2 1) (3) (4))
+MAX state (#t (2 1) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MAX state (#t (1) (4) (2 3))
+MIN state (#f (2 1) (4) (3))
+MAX state (#t (2 1) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (2) () (1 3 4))
+MAX state (#t (2) (1) (3 4))
+MIN state (#f (3 2) (1) (4))
+MAX state (#t (3 2) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (4 2) (1) (3))
+MAX state (#t (4 2) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (3) (1 4))
+MIN state (#f (1 2) (3) (4))
+MAX state (#t (1 2) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (4 2) (3) (1))
+MAX state (#t (4 2) (1 3) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (4) (1 3))
+MIN state (#f (1 2) (4) (3))
+MAX state (#t (1 2) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (3 2) (4) (1))
+MAX state (#t (3 2) (1 4) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (3) () (1 2 4))
+MAX state (#t (3) (1) (2 4))
+MIN state (#f (2 3) (1) (4))
+MAX state (#t (2 3) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (4 3) (1) (2))
+MAX state (#t (4 3) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+MIN state (#f (4) () (1 2 3))
+MAX state (#t (4) (1) (2 3))
+MIN state (#f (2 4) (1) (3))
+MAX state (#t (2 4) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MIN state (#f (3 4) (1) (2))
+MAX state (#t (3 4) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+
+
+ Test to compare alpha-beta-search and cutoff-minimax-searchMAX state (#t () () (1 2 3 4))
+MIN state (#f (1) () (2 3 4))
+MAX state (#t (1) (2) (3 4))
+MIN state (#f (3 1) (2) (4))
+MAX state (#t (3 1) (4 2) ())
+Player 1: 3
+Player 2: 8
+MAX utility -1
+MIN state (#f (4 1) (2) (3))
+MAX state (#t (4 1) (3 2) ())
+Player 1: 4
+Player 2: 6
+MAX utility -1
+MAX state (#t (1) (3) (2 4))
+MIN state (#f (2 1) (3) (4))
+MAX state (#t (2 1) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MAX state (#t (1) (4) (2 3))
+MIN state (#f (2 1) (4) (3))
+MAX state (#t (2 1) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (2) () (1 3 4))
+MAX state (#t (2) (1) (3 4))
+MIN state (#f (3 2) (1) (4))
+MAX state (#t (3 2) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (4 2) (1) (3))
+MAX state (#t (4 2) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (3) (1 4))
+MIN state (#f (1 2) (3) (4))
+MAX state (#t (1 2) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (4 2) (3) (1))
+MAX state (#t (4 2) (1 3) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (4) (1 3))
+MIN state (#f (1 2) (4) (3))
+MAX state (#t (1 2) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (3 2) (4) (1))
+MAX state (#t (3 2) (1 4) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (3) () (1 2 4))
+MAX state (#t (3) (1) (2 4))
+MIN state (#f (2 3) (1) (4))
+MAX state (#t (2 3) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (4 3) (1) (2))
+MAX state (#t (4 3) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+MIN state (#f (4) () (1 2 3))
+MAX state (#t (4) (1) (2 3))
+MIN state (#f (2 4) (1) (3))
+MAX state (#t (2 4) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MIN state (#f (3 4) (1) (2))
+MAX state (#t (3 4) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+MAX state (#t () () (1 2 3 4))
+MIN state (#f (1) () (2 3 4))
+MAX state (#t (1) (2) (3 4))
+MIN state (#f (3 1) (2) (4))
+MAX state (#t (3 1) (4 2) ())
+Player 1: 3
+Player 2: 8
+MAX utility -1
+MIN state (#f (4 1) (2) (3))
+MAX state (#t (4 1) (3 2) ())
+Player 1: 4
+Player 2: 6
+MAX utility -1
+MAX state (#t (1) (3) (2 4))
+MIN state (#f (2 1) (3) (4))
+MAX state (#t (2 1) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MAX state (#t (1) (4) (2 3))
+MIN state (#f (2 1) (4) (3))
+MAX state (#t (2 1) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (2) () (1 3 4))
+MAX state (#t (2) (1) (3 4))
+MIN state (#f (3 2) (1) (4))
+MAX state (#t (3 2) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (4 2) (1) (3))
+MAX state (#t (4 2) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (3) (1 4))
+MIN state (#f (1 2) (3) (4))
+MAX state (#t (1 2) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (4 2) (3) (1))
+MAX state (#t (4 2) (1 3) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (4) (1 3))
+MIN state (#f (1 2) (4) (3))
+MAX state (#t (1 2) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (3 2) (4) (1))
+MAX state (#t (3 2) (1 4) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (3) () (1 2 4))
+MAX state (#t (3) (1) (2 4))
+MIN state (#f (2 3) (1) (4))
+MAX state (#t (2 3) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (4 3) (1) (2))
+MAX state (#t (4 3) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+MIN state (#f (4) () (1 2 3))
+MAX state (#t (4) (1) (2 3))
+MIN state (#f (2 4) (1) (3))
+MAX state (#t (2 4) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MIN state (#f (3 4) (1) (2))
+MAX state (#t (3 4) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+MAX state (#t () () (1 2 3 4))
+MIN state (#f (1) () (2 3 4))
+MAX state (#t (1) (2) (3 4))
+MIN state (#f (3 1) (2) (4))
+MAX state (#t (3 1) (4 2) ())
+Player 1: 3
+Player 2: 8
+MAX utility -1
+MIN state (#f (4 1) (2) (3))
+MAX state (#t (4 1) (3 2) ())
+Player 1: 4
+Player 2: 6
+MAX utility -1
+MAX state (#t (1) (3) (2 4))
+MIN state (#f (2 1) (3) (4))
+MAX state (#t (2 1) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MAX state (#t (1) (4) (2 3))
+MIN state (#f (2 1) (4) (3))
+MAX state (#t (2 1) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (2) () (1 3 4))
+MAX state (#t (2) (1) (3 4))
+MIN state (#f (3 2) (1) (4))
+MAX state (#t (3 2) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (4 2) (1) (3))
+MAX state (#t (4 2) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (3) (1 4))
+MIN state (#f (1 2) (3) (4))
+MAX state (#t (1 2) (4 3) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (4 2) (3) (1))
+MAX state (#t (4 2) (1 3) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MAX state (#t (2) (4) (1 3))
+MIN state (#f (1 2) (4) (3))
+MAX state (#t (1 2) (3 4) ())
+Player 1: 2
+Player 2: 12
+MAX utility -1
+MIN state (#f (3 2) (4) (1))
+MAX state (#t (3 2) (1 4) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (3) () (1 2 4))
+MAX state (#t (3) (1) (2 4))
+MIN state (#f (2 3) (1) (4))
+MAX state (#t (2 3) (4 1) ())
+Player 1: 6
+Player 2: 4
+MAX utility 1
+MIN state (#f (4 3) (1) (2))
+MAX state (#t (4 3) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+MIN state (#f (4) () (1 2 3))
+MAX state (#t (4) (1) (2 3))
+MIN state (#f (2 4) (1) (3))
+MAX state (#t (2 4) (3 1) ())
+Player 1: 8
+Player 2: 3
+MAX utility 1
+MIN state (#f (3 4) (1) (2))
+MAX state (#t (3 4) (2 1) ())
+Player 1: 12
+Player 2: 2
+MAX utility 1
+3 success(es) 0 failure(s) 0 error(s) 3 test(s) run
+
+Demonstrate our function is better than the simple-mancala-eval:
+simple-mancala-eval as player 1; best-mancala-eval as player2:
+(  ) ( 4) ( 4) ( 4) ( 4) ( 4) ( 4) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 0)                               ( 0)
+(  ) ( 4) ( 4) ( 4) ( 4) ( 4) ( 4) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 2
+(  ) ( 4) ( 4) ( 4) ( 4) ( 4) ( 4) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 0)                               ( 1)
+(  ) ( 4) ( 4) ( 0) ( 5) ( 5) ( 5) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 11
+(  ) ( 5) ( 0) ( 4) ( 4) ( 4) ( 4) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 1)                               ( 1)
+(  ) ( 5) ( 5) ( 0) ( 5) ( 5) ( 5) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 1
+(  ) ( 5) ( 0) ( 4) ( 4) ( 4) ( 4) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 1)                               ( 2)
+(  ) ( 5) ( 0) ( 1) ( 6) ( 6) ( 6) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 12
+(  ) ( 0) ( 0) ( 4) ( 4) ( 4) ( 4) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 2)                               ( 2)
+(  ) ( 6) ( 1) ( 2) ( 7) ( 6) ( 6) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 0
+(  ) ( 0) ( 0) ( 4) ( 4) ( 4) ( 4) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 2)                               ( 3)
+(  ) ( 0) ( 2) ( 3) ( 8) ( 7) ( 7) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 7
+(  ) ( 0) ( 0) ( 5) ( 5) ( 5) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 5)                               ( 3)
+(  ) ( 0) ( 0) ( 3) ( 8) ( 7) ( 7) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 3
+(  ) ( 0) ( 1) ( 6) ( 6) ( 6) ( 1) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 5)                               ( 4)
+(  ) ( 0) ( 0) ( 3) ( 0) ( 8) ( 8) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 11
+(  ) ( 0) ( 0) ( 6) ( 6) ( 6) ( 1) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 6)                               ( 4)
+(  ) ( 0) ( 0) ( 3) ( 0) ( 8) ( 8) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 4
+(  ) ( 1) ( 1) ( 7) ( 7) ( 7) ( 2) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 6)                               ( 5)
+(  ) ( 0) ( 0) ( 3) ( 0) ( 0) ( 9) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 12
+(  ) ( 0) ( 1) ( 7) ( 7) ( 7) ( 2) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 7)                               ( 5)
+(  ) ( 0) ( 0) ( 3) ( 0) ( 0) ( 9) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 5
+(  ) ( 0) ( 2) ( 8) ( 8) ( 8) ( 3) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 8)                               ( 8)
+(  ) ( 0) ( 0) ( 3) ( 0) ( 0) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 7
+(  ) ( 0) ( 2) ( 9) ( 9) ( 9) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 8)                               ( 8)
+(  ) ( 0) ( 0) ( 3) ( 0) ( 0) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 2
+(  ) ( 0) ( 2) ( 9) ( 9) ( 9) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 8)                               ( 9)
+(  ) ( 0) ( 0) ( 0) ( 1) ( 1) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 11
+(  ) ( 1) ( 0) ( 9) ( 9) ( 9) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 9)                               ( 9)
+(  ) ( 0) ( 0) ( 0) ( 1) ( 1) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 4
+(  ) ( 1) ( 0) ( 9) ( 9) ( 9) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 9)                               (10)
+(  ) ( 0) ( 0) ( 0) ( 1) ( 0) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 9
+(  ) ( 2) ( 1) (10) ( 0) ( 9) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(10)                               (10)
+(  ) ( 1) ( 1) ( 1) ( 2) ( 1) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 3
+(  ) ( 2) ( 1) (10) ( 0) ( 9) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(10)                               (11)
+(  ) ( 1) ( 1) ( 1) ( 0) ( 2) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 12
+(  ) ( 0) ( 1) (10) ( 0) ( 9) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(11)                               (11)
+(  ) ( 2) ( 1) ( 1) ( 0) ( 2) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 2
+(  ) ( 0) ( 1) (10) ( 0) ( 9) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(11)                               (12)
+(  ) ( 2) ( 1) ( 0) ( 0) ( 2) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 8
+(  ) ( 1) ( 2) (11) ( 1) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(12)                               (12)
+(  ) ( 3) ( 2) ( 1) ( 1) ( 2) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 4
+(  ) ( 1) ( 2) (11) ( 1) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(12)                               (13)
+(  ) ( 3) ( 2) ( 1) ( 1) ( 0) ( 1) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 12
+(  ) ( 0) ( 2) (11) ( 1) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(13)                               (13)
+(  ) ( 3) ( 2) ( 1) ( 1) ( 0) ( 1) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 3
+(  ) ( 0) ( 2) (11) ( 1) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(13)                               (14)
+(  ) ( 3) ( 2) ( 1) ( 0) ( 0) ( 1) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 9
+(  ) ( 0) ( 2) (12) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(13)                               (14)
+(  ) ( 3) ( 2) ( 1) ( 0) ( 0) ( 1) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 0
+(  ) ( 0) ( 2) (12) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(13)                               (15)
+(  ) ( 0) ( 3) ( 2) ( 0) ( 0) ( 1) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 11
+(  ) ( 1) ( 0) (12) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(14)                               (15)
+(  ) ( 0) ( 3) ( 2) ( 0) ( 0) ( 1) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 1
+(  ) ( 1) ( 0) (12) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(14)                               (16)
+(  ) ( 0) ( 0) ( 3) ( 1) ( 0) ( 1) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 12
+(  ) ( 0) ( 0) (12) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(15)                               (16)
+(  ) ( 0) ( 0) ( 3) ( 1) ( 0) ( 1) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 3
+(  ) ( 0) ( 0) (12) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(15)                               (17)
+(  ) ( 0) ( 0) ( 3) ( 0) ( 0) ( 1) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 10
+(  ) ( 1) ( 1) ( 0) ( 0) ( 0) ( 1) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(18)                               (18)
+(  ) ( 1) ( 1) ( 4) ( 1) ( 0) ( 2) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 2
+(  ) ( 1) ( 1) ( 0) ( 0) ( 0) ( 1) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(18)                               (19)
+(  ) ( 1) ( 1) ( 0) ( 2) ( 1) ( 3) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 12
+(  ) ( 0) ( 1) ( 0) ( 0) ( 0) ( 1) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(19)                               (19)
+(  ) ( 1) ( 1) ( 0) ( 2) ( 1) ( 3) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 0
+(  ) ( 0) ( 1) ( 0) ( 0) ( 0) ( 1) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(19)                               (19)
+(  ) ( 0) ( 2) ( 0) ( 2) ( 1) ( 3) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 7
+(  ) ( 0) ( 1) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(21)                               (19)
+(  ) ( 0) ( 2) ( 0) ( 2) ( 0) ( 3) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 5
+(  ) ( 0) ( 1) ( 0) ( 0) ( 1) ( 1) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(21)                               (20)
+(  ) ( 0) ( 2) ( 0) ( 2) ( 0) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 8
+(  ) ( 0) ( 1) ( 0) ( 0) ( 0) ( 1) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(24)                               (20)
+(  ) ( 0) ( 2) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 1
+(  ) ( 0) ( 1) ( 0) ( 0) ( 0) ( 1) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(24)                               (21)
+(  ) ( 0) ( 0) ( 1) ( 0) ( 0) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 7
+(  ) ( 0) ( 1) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(25)                               (21)
+(  ) ( 0) ( 0) ( 1) ( 0) ( 0) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 2
+(  ) ( 0) ( 1) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+(25)                               (22)
+(  ) ( 0) ( 0) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 Wins!
+
+best-mancala-eval as player 1; simple-mancala-eval as player2:
+(  ) ( 4) ( 4) ( 4) ( 4) ( 4) ( 4) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 0)                               ( 0)
+(  ) ( 4) ( 4) ( 4) ( 4) ( 4) ( 4) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 5
+(  ) ( 4) ( 4) ( 4) ( 5) ( 5) ( 5) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 0)                               ( 1)
+(  ) ( 4) ( 4) ( 4) ( 4) ( 4) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 8
+(  ) ( 5) ( 5) ( 5) ( 6) ( 0) ( 5) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 1)                               ( 1)
+(  ) ( 4) ( 4) ( 4) ( 4) ( 4) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 1
+(  ) ( 5) ( 5) ( 5) ( 6) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 1)                               ( 7)
+(  ) ( 4) ( 0) ( 5) ( 5) ( 5) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 9
+(  ) ( 6) ( 6) ( 6) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 2)                               ( 7)
+(  ) ( 5) ( 1) ( 5) ( 5) ( 5) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 0
+(  ) ( 6) ( 6) ( 6) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 2)                               ( 8)
+(  ) ( 0) ( 2) ( 6) ( 6) ( 6) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 10
+(  ) ( 7) ( 7) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 3)                               ( 8)
+(  ) ( 1) ( 3) ( 7) ( 6) ( 6) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 0
+(  ) ( 7) ( 7) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 3)                               ( 8)
+(  ) ( 0) ( 4) ( 7) ( 6) ( 6) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 12
+(  ) ( 0) ( 7) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 4)                               ( 8)
+(  ) ( 1) ( 5) ( 8) ( 7) ( 7) ( 1) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 5
+(  ) ( 0) ( 7) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 4)                               ( 9)
+(  ) ( 1) ( 5) ( 8) ( 7) ( 7) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 11
+(  ) ( 1) ( 0) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 5)                               ( 9)
+(  ) ( 2) ( 6) ( 9) ( 8) ( 8) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 chooses 0
+(  ) ( 1) ( 0) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 5)                               ( 9)
+(  ) ( 0) ( 7) (10) ( 8) ( 8) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 2 chooses 12
+(  ) ( 0) ( 0) ( 0) ( 0) ( 0) ( 0) (  ) 
+(  )  12   11   10    9    8    7  (  ) 
+( 6)                               ( 9)
+(  ) ( 0) ( 7) (10) ( 8) ( 8) ( 0) (  ) 
+(  )   0    1    2    3    4    5  (  ) 
+Player 1 Wins!
+
+our evaluation function wins every time.$ exir[Kt
+exit
+
+Script done on Mon Feb 19 21:46:51 2018

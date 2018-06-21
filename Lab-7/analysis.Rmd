@@ -1,0 +1,247 @@
+---
+title: "Letter Classification"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Introduction
+
+The goal of this study is to reconstruct a series of letters that John Mills wrote to his son, which he published under Letters of a Radio-Engineer to His Son in 1992 (New York: Harcourt, Brace and Company). The letters are in need of reconstruction because Mr. Mill’s typists, Typist-1 and Typist-2, transcribed the letters incorrectly. 
+
+We know that Typist-1 typed letters 1, 8 and 16 and Typist-2 typed letters 4,9 and 18.  We attempt to attribute the letters to their respective typists by “training” models based on our prior information on who typed a particular letter. Training amounts to informing the model on what kinds of errors each of the typist
+s most frequently commit. With this knowledge, when we give our model the original letter and a transcribed letter, the model can make an informed guess on who could have typed the transcribed letter, based on the most frequent types of errors present in the transcribed letter. 
+
+We will begin by training on a single letter for each typist, and reporting the resulting evidence (in decibels) of our attribution compared to the known author of the letter. We will do this for every possible combination of letters available (36 in total). We will then perform this same analysis by first training on two letters by each typist, for every combination of letters available (18 in total). These results will hopefully show the reliability of our method. Finally, we will train on all three available letters, and attempt to attribute the letters with unknown transcribers.
+
+####Calculating Evidence 
+Jaynes defines *evidence* (which we shall refer to as Jayne's evidence henceforth) as $e(H|DX) \equiv 10\ log_{10}\ O(H|DX)$[^1]. Notice that this definition of *evidence* is not the same as the evidence from the Bayes Rule. Jayne's evidence can be expressed as $e(H|DX) \equiv  e(H|X) + 10\  log_{10} \frac{P(D|HX)}{P(D|\bar{H}X)}$[^2].
+
+In this context, prior is the belief that a unclassified letter was written by a particular typist before we evaluate the unclassified letter. For all the predictions that we conduct in this study, we train each typist by the same number of letters. Thus, by the **Rule of Succession**, we assign the same probability for the letter being typed by Typist-1 and the letter being typed by Typist-2. This implies that $$e(H|X) = 10 log_{10} O(H|X) = 10 log_{10} \frac{P(H|X)}{P(\bar{H}|X)} = 0$$. 
+
+
+
+
+
+
+[^1]: Jaynes, E. T. Probability theory: the logic of science. Cambridge University Press, 2003, p.91.(This is referred to as equation 4.8 in the book)
+[^2]: Jaynes, E. T. Probability theory: the logic of science. Cambridge University Press, 2003, p.91. (This is referred as equation 4.9 in the book)
+
+
+
+
+###Test A : Training on a single letter 
+
+There are 3 ways to select a letter typed by Typist-1 and 3 ways to select a letter typed by Typist-2. Selecting 2 letters from 6 letters leaves us with 4 letters. For each of the 4 remaining letters, we use the trained model to predict who typed it. This means that we can run (3 * 3 * 4 = 36) tests. For each of the predictions, we exactly know who typed the letter. So, we can objectively know whether the prediction made by the model was right or wrong. Depending on the percentage of correct predictions, we can decide on how confident we can be in our methodology.
+
+####Results
+
+
+```{r, echo=FALSE}
+test_1 <- read.csv("Test-1.csv")
+```
+
+```{r,echo=FALSE}
+#Pie chart for correct predictions
+
+correct <-  table(test_1$Correct)["TRUE"]
+false <-  table(test_1$Correct)["FALSE"]
+slices <- c(correct, false)
+lbls <- c("Correct", "False")
+pie(slices, labels = lbls, main="Pie Chart showing the ratio of correct and wrong predictions for Test A", font.main = 2,col=c("grey", "skyblue"))
+```
+
+Out of the 36 predictions, only 18 of them were correct. Of the 18 letters typed by Typist-1, 8 of them were correctly predicted whereas of the 18 letters typed by Typist-2, 10 of them were correctly predicted. The predictions from training using a single letter for Typist-1 and Typist-2 performed as well as randomly flipping a coin; the expected value of predicting correctly was only 50%. 
+
+
+```{r, echo=FALSE}
+#Stacked BarChart
+
+
+t1 <- table(test_1$Correct*1,test_1$Letter.Typed.By)
+barplot(t1, names.arg=c("Typist 1", "Typist 2"), xlab="Letter Typed By", main = "Barchart of prediction for letters typed by Typist-1 and Typist-2", 
+        legend = c("False Predictoin", "Correct Prediction"), col = c("black", "red"))
+```
+
+
+```{r, fig.height=3, echo=FALSE, warning=FALSE, message=FALSE}
+#One dimensional scatter plot for Test 1
+
+library(dplyr)
+xlim <- c(-2000,1500);
+ylim <- c(0,20);
+
+letters_from_1 <- filter(test_1, test_1$Letter.Typed.By == 1)
+letters_from_2 <- filter(test_1, test_1$Letter.Typed.By == 2)
+
+px_1 <- letters_from_1$Evidence
+py_1 <- c(rep(2,length(px_1)))
+
+px_2 <- letters_from_2$Evidence
+py_2 <- c(rep(1,length(px_2)))
+
+lx.buf <- 0;
+lx <- seq(xlim[1]+lx.buf,xlim[2]-lx.buf,len=length(px_1));
+ly <- 0;
+
+## create basic plot outline
+par(xaxs='i',yaxs='i',mar=c(5,1,1,1));
+plot(NA,xlim=xlim,ylim=ylim,axes=F,ann=T, xlab = "Evidence in db",
+     main = "Evidence for letters typed by Typist-1 and Typist-2");
+axis(1);
+
+
+## plot elements
+points(px_1,py_1,pch=24,cex=1.5, col="red", bg = par("bg"))
+points(px_2,py_2,pch=25,cex=1.5, col="blue")
+abline(v=0, lwd=0.2)
+
+legend("right",border = "white", legend = c("Typed by Typist 1","Typed by Typist 2"),
+                           pch = c(24,25), col = c("red","blue"),
+       )
+```
+
+
+###Test B: Training on two letters
+
+Using the same letters as in our prior analysis, we ran new tests in which we trained using two letters from each typist attempting to attribute the one remaining, allowing us to perform (3 * 3 * 2 = 18) tests. Just as before, we know who typed each letter and we have the correct transcript of the original copy, so we are able to report on our accuracy. 
+
+####Results
+
+This set of predictions were more accurate compared to Test A. Of the 18 predictions made in Test B, 12 of them were correct, yielding an accuracy of ~ 67%. This gives us confidence in our methodology as unlike Test A, it performs better than random chance. 
+
+```{r, echo=FALSE}
+test_2 <- read.csv("Test-2.csv")
+```
+
+```{r, echo=FALSE}
+#Pie chart for correct predictions
+
+correct_2 <-  table(test_2$Correct)["TRUE"]
+false_2 <-  table(test_2$Correct)["FALSE"]
+slices_2 <- c(correct_2, false_2)
+lbls <- c("Correct", "False")
+pie(slices_2, labels = lbls, main="Pie Chart showing the ratio of correct and wrong predictions for Test B", font.main = 2
+    ,col=c("grey", "skyblue"))
+```
+
+The wrong predictions of letters did not come from evenly from Typist-1 and Typist-2. Of the 6 letters that were incorrectly classified, 4 of them were typed by Typist-1 whereas 2 only 2 of them were typed by Typist-2. 
+
+```{r, echo=FALSE, fig.align="center"}
+#Stacked BarChart
+
+
+t2 <- table(test_2$Correct*1,test_2$Letter.Typed.By)
+barplot( t2, names.arg=c("Typist 1", "Typist 2"), xlab="Letter Typed By",  main = "Barchart of prediction for letters typed by Typist-1 and Typist-2", col = c("black", "red"), legend.text = c("False", "Correct"), 
+      args.legend=list(
+      xjust=1.2,
+      yjust=0.87,
+      ncol =1,
+      pt.bg="blue",
+      box.col="green",
+      box.lwd=7,
+      bty="n",
+      text.col = "white",
+      cex = 1.2
+       ))
+
+
+#legend (1.73 ,9,c("False Prediction", "Correct Prediction"))
+
+```
+After training each typist by 2 letters, the expected value of making an incorrect prediction is $\frac{1}{3}$. This is still a very large number. However, the jump in accuracy from one letter to two makes us confident that by training on three letters, we will have a much stronger accuracy. 
+
+
+
+
+
+
+```{r, fig.height=3, echo=FALSE}
+#One dimensional scatter plot
+
+xlim <- c(-1000,1000);
+ylim <- c(0,10);
+
+tbl <- table(test_2$Evidence,test_2$Letter.Typed.By)
+
+
+px_1 <- test_2$Evidence[1:9];
+py_1 <- c(rep(2,length(px_1)))
+
+px_2 <- test_2$Evidence[10:18];
+py_2 <- c(rep(1,length(px_2)))
+
+lx.buf <- 0;
+lx <- seq(xlim[1]+lx.buf,xlim[2]-lx.buf,len=length(px_1));
+ly <- 0;
+
+## create basic plot outline
+par(xaxs='i',yaxs='i',mar=c(5,1,1,1));
+plot(NA,xlim=xlim,ylim=ylim,axes=F,ann=T, xlab = "Evidence in db",
+      main = "Evidence for letters typed by Typist-1 and Typist-2");
+axis(1);
+
+
+## plot elements
+points(px_1,py_1,pch=24,cex=1.5, col="red", bg = par("bg"))
+points(px_2,py_2,pch=25,cex=1.5, col="blue")
+abline(v=0)
+
+legend("right",border = "white", legend = c("Typed by Typist 1","Typed by Typist 2"),
+                           pch = c(24,25), col = c("red","blue"),
+       )
+```
+
+
+
+
+
+### Training on three letters
+
+Unlike in our previous tests, for these tests we are training on all three of our known letters by each typist, and attempting to attribute the remaining unattributed letters for which we have the originals. The unattributed letters that we have originals for include letters 3, 7, 10, 11, 15 and 22. For all the other unattributed letters we do not possess original copies, and therefore are unable to provide evidence for them.
+
+```{r, echo=FALSE}
+library(knitr)
+test_3 <-read.csv("Test_3.csv")
+kable(test_3, caption = "Table containing evidence and classification for the unknown letters", format = "markdown", longtable=TRUE)
+```
+
+####Conclusions 
+
+As shown in the results of our final tests, we have attributed letters 7, 11 and 22 to Typist-1, and letters 3, 15 and 10 to Typist-2. Since the accuracy of Test B was about 67%, we are at confident that this classification will perform better than random chance. It is reasonable to assume that training with 3 letters will perform even better than training by by only 2 letters. We expect the accuracy of our test to be around 75%. 
+
+Analyzing the magnitude of evidence for each letter, we are least confident in our attribution of letter 10 as it has the lowest magnitude of evidence at around 28. This still means that as per our analysis, we should be 280 times more likely to believe that letter 10 was typed by Typist-2 as compared to Typist-1. If any, we suspect that we incorrectly classified letter 10 as the evidence for all the other classifications are pretty high. 
+
+
+Without more letters to train on, this is the best method we can conceive of to attribute these letters.  We are confident that our methodology of classifications will get better once we get possession of more letters to train on. 
+
+
+
+\newpage
+
+
+### Appendix 
+
+
+####Table for training on a single letter
+```{r, echo=FALSE}
+library(knitr)
+kable(test_1, caption = "Table for training on a single letter  ", format = "markdown", longtable=TRUE)
+```
+
+
+#### Table for training on two letters
+```{r, echo=FALSE}
+kable(test_2, caption = "Table for training on two letters  ", format = "markdown", longtable=TRUE)
+```
+
+
+
+
+
+

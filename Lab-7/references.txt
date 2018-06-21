@@ -1,0 +1,31 @@
+References:
+  Written/online sources used:
+    
+    Obtained charmodel.scm from Jerod Weinman
+
+    Read the documentation of functions in charmodel.scm to get an understanding of how to calculate Jaynes Evidence
+
+    Got background information on the question from the Lab:
+    http://www.cs.grinnell.edu/~weinman/courses/CSC261/2018S/assignments/probability.pdf
+
+   Worked  on the in-class lab:
+   http://www.cs.grinnell.edu/~weinman/courses/CSC261/2018S/labs/probability.html
+
+   Textbook:
+   Looked up the definition of evidence from Probability Theory, E.T.Jaynes (p.91)
+
+   R:
+   Used code from projects done in MAT-310 to make the stacked bar chart and scatterplots 
+
+
+
+
+  Help obtained:
+    None
+
+
+Academic honesty certification:
+  Our initials below confirm that the above list of sources
+  is complete AND that I/we have not talked to anyone else
+  (e.g., CSC 261 students) about the solution to this problem
+Initials: DAD, NP

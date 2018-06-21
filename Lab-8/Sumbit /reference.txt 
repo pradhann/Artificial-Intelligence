@@ -1,0 +1,26 @@
+
+References:
+  Written/online sources used:
+   Previous Labs:
+     Lab7 produced by [Nripesh & Devin]
+      1) Used code that gave the path to a particular letter
+      2) Used R code to produce the one-dimensional scatter plot for 
+         Jaynes Evidence 
+
+  Code from the Lab:
+   Obtained hmm.scm from Jerod Weinman
+
+    Read the documentaion of functions in hmm.scm to get an idea on how to calculate Jaynes Evidence
+
+
+
+
+  Help obtained:
+    [Went to Office Hours of Jerod Weinman to talk about the extra credit problem]
+
+
+Academic honesty certification:
+  Our initials below confirm that the above list of sources
+  is complete AND that I/we have not talked to anyone else
+  (e.g., CSC 261 students) about the solution to this problem
+  Initials:  NP, RS
